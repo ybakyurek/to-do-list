@@ -1,6 +1,7 @@
 package com.ybakyurek.exception;
 
 /*
+Exception handle edilebilecek hatalarken, error outOfMemory gibi handle edilemeyecek hatalardir.
 200 OK:İstek başarılı bir şekilde gerçekleşti ve sunucu tarafından istenilen kaynak veya işlem istemciye doğru şekilde döndü.
     Bu kod genellikle GET isteklerinin başarılı olduğunu ifade eder.
 
