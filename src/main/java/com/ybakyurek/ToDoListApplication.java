@@ -4,7 +4,6 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-
 import java.util.TimeZone;
 
 
@@ -24,9 +23,25 @@ import java.util.TimeZone;
 // Spring Cache aktif etmek gerekiyor.
 // @EnableCaching
 
+
+/*
+*	Spring Data JPA ile otomatik denetim (auditing) özelliğini etkinleştirmek için kullanılır.
+*	Bu özellik sayesinde, veritabanında yapılan işlemlerin (oluşturma, güncelleme)
+*	hangi kullanıcı tarafından	ve ne zaman gerçekleştirildiğini otomatik olarak kaydedebilirsiniz.
+*/
 // Auditin Aktif etmek
 @EnableJpaAuditing(auditorAwareRef = "auditorAwareBeanMethod")
 
+
+
+/*
+* bir Spring Boot uygulamasının başlatılmasını yapılandırmak için kullanılıyor.
+* Uygulama başlatılırken belirli otomatik yapılandırmaları devre dışı bırakmayı amaçlar.
+* @SpringBootApplication annotasyonu genellikle Spring Boot uygulamalarının ana sınıfında kullanılır.
+* Bu annotasyon, birçok farklı otomatik yapılandırmayı içeren bir dizi Spring Boot annotasyonunu bir araya getirir.
+*
+*
+* */
 // Spring Security
 @SpringBootApplication(exclude = {
 		//SecurityAutoConfiguration.class,
@@ -36,6 +51,9 @@ import java.util.TimeZone;
 )
 public class ToDoListApplication {
 
+
+	//Bu, uygulamanın varsayılan zaman dilimini ayarlamak amacıyla kullanılabilecek bir adımdır
+	//@PostConstruct metodu, bileşenin inşa sürecinden sonra başlatma işlemlerini gerçekleştirmek için kullanılır.
 	@PostConstruct
 	public void init() {
 		TimeZone.setDefault(TimeZone.getTimeZone("IST"));
