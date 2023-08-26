@@ -45,7 +45,7 @@ abstract public class AuditingAwareBaseDto implements Serializable {
      * Nesneyi kimin oluşturduğunu temsil eder. Kim ekledi'ye cevap buradadir.
      * Bu alan @JsonIgnore anotasyonu ile işaretlenmiştir,
      * yani bu alanın değeri JSON dönüşümlerinde gösterilmeyecektir.
-     * (Backentte veri giderken)*/
+     * (Backentte veri giderken jsonignore bilgilerini gosterme asagidaki bir kac simdilik acik kalsin)*/
     @JsonIgnore
     protected String createdUser;
 
