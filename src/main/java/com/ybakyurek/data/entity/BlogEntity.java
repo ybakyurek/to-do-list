@@ -81,6 +81,7 @@ public class BlogEntity extends AuditingAwareBaseEntity implements Serializable 
     *   name parametresi ile sütun adı belirtilir.
     *   nullable parametresi, bu sütunun boş geçilemez olduğunu belirtir.
     *   Yani, bir blogun mutlaka bir kategoriye ait olması gerektiği anlamına gelir.
+    * Blog ve Category Entity arasinda bir baglanti saglamamiz lazim
     * */
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name="category_id",nullable = false)

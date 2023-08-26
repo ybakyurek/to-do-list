@@ -44,6 +44,7 @@ public class CategoryEntity extends AuditingAwareBaseEntity implements Serializa
     private Date systemDate;
 
     // RELATION
+    // Burada one to many var.Blogda ise mant to one var.
     @OneToMany(mappedBy = "relationCategoryEntity",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     List<BlogEntity> relationBlogEntityList;
 
