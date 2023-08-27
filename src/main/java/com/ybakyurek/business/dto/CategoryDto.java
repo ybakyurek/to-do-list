@@ -24,7 +24,7 @@ public class CategoryDto  extends AuditingAwareBaseDto implements Serializable {
     public static final Long serialVersionUID=1L;
 
     // CATEGORY
-    @NotEmpty(message = "{blog.category.validation.constraints.NotNull.message}")
-    @Size(min=10,message = "{blog.category.least.validation.constraints.NotNull.message}")
+    @NotEmpty(message = "{task.category.validation.constraints.NotNull.message}")
+    @Size(min=10,message = "{task.category.least.validation.constraints.NotNull.message}")
     private String categoryName;
 }

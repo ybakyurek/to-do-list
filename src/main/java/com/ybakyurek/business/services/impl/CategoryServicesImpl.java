@@ -12,7 +12,7 @@ import com.ybakyurek.business.dto.CategoryDto;
 import com.ybakyurek.business.services.ICategoryServices;
 import com.ybakyurek.data.entity.CategoryEntity;
 import com.ybakyurek.data.repository.ICategoryRepository;
-import com.ybakyurek.exception.BlogNotFoundException;
+import com.ybakyurek.exception.TaskNotFoundException;
 import com.ybakyurek.exception.YbakyurekException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -104,7 +104,7 @@ public class CategoryServicesImpl implements ICategoryServices<CategoryDto, Cate
     /*
     * Belirli bir kategoriyi bulma işlemini gerçekleştirir.
     * Verilen ID'ye ait kategoriyi veritabanından çeker,
-    * bulunamazsa BlogNotFoundException hatası fırlatır ve
+    * bulunamazsa TaskNotFoundException hatası fırlatır ve
     * bulunan kategoriyi Entity nesnesinden DTO nesnesine dönüştürerek sunar.
     * */
     @Override
@@ -122,7 +122,7 @@ public class CategoryServicesImpl implements ICategoryServices<CategoryDto, Cate
         CategoryEntity categoryEntity = null;
         if (id != null && id != 0) {
             categoryEntity = iCategoryRepository.findById(id)
-                    .orElseThrow(() -> new BlogNotFoundException(id + " Nolu ID Bulunmadı !!!!"));
+                    .orElseThrow(() -> new TaskNotFoundException(id + " Nolu ID Bulunmadı !!!!"));
         } else if (id == null)
             throw new YbakyurekException("Category id bull değerdir");
         return entityToDto(categoryEntity);

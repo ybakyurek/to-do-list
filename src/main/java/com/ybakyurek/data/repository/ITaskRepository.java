@@ -4,13 +4,13 @@ package com.ybakyurek.data.repository;
 // CrudRepository
 // PagingAndSortingRepository
 
-import com.ybakyurek.data.entity.BlogEntity;
+import com.ybakyurek.data.entity.TaskEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IBlogRepository extends CrudRepository<BlogEntity,Long> {
+public interface ITaskRepository extends CrudRepository<TaskEntity,Long> {
 
     // Delivered Query
-    BlogEntity findBlogEntityByBlogEntityEmbeddableHeader(String header);
+    TaskEntity findTaskEntityByTaskEntityEmbeddableTitle(String title);
 }

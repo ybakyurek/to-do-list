@@ -18,19 +18,16 @@ import lombok.Setter;
 @Setter
 
 @Embeddable
-public class BlogEntityEmbeddable {
+public class TaskEntityEmbeddable {
 
-    // HEADER
-    @Column(name = "header", length = 500, columnDefinition = "varchar(500) default 'başlık yazılmadı...'")
-    private String header;
+    // TITLE
+    @Column(name = "title", length = 500, columnDefinition = "varchar(500) default 'başlık yazılmadı...'")
+    private String title;
 
     // CONTENT
     @Lob
     private String content;
 
-    // IMAGE
-    private String image;
-
-    // TITLE
-    private String title;
+    // STATUS
+    private Boolean status;
 }

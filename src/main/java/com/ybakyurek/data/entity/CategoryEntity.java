@@ -1,7 +1,7 @@
 package com.ybakyurek.data.entity;
 
 /*
-* Bu class BlogEntity'nin benzeridir.
+* Bu class TaskEntity'nin benzeridir.
 * */
 
 import com.ybakyurek.auditing.AuditingAwareBaseEntity;
@@ -22,7 +22,7 @@ import java.util.List;
 // ENTITY
 @Entity
 @Table(name = "categories")
-// Categories(1)  Blog(N)
+// Categories(1)  Task(N)
 public class CategoryEntity extends AuditingAwareBaseEntity implements Serializable {
 
     // Serileştirme
@@ -44,9 +44,9 @@ public class CategoryEntity extends AuditingAwareBaseEntity implements Serializa
     private Date systemDate;
 
     // RELATION
-    // Burada one to many var.Blogda ise mant to one var.
+    // Burada one to many var.Taskda ise mant to one var.
     @OneToMany(mappedBy = "relationCategoryEntity",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    List<BlogEntity> relationBlogEntityList;
+    List<TaskEntity> relationTaskEntityList;
 
     // Constructor(Parametresiz)
     public CategoryEntity() {

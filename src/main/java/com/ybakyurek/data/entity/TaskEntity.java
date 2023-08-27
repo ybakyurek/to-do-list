@@ -1,7 +1,7 @@
 package com.ybakyurek.data.entity;
 
 import com.ybakyurek.auditing.AuditingAwareBaseEntity;
-import com.ybakyurek.data.BlogEntityEmbeddable;
+import com.ybakyurek.data.TaskEntityEmbeddable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -22,32 +22,32 @@ import java.util.Date;
 * */
 @Entity
 /*
-* @Table(name = "blogs"): Bu anotasyon, sınıfın veritabanında hangi tabloya karşılık geldiğini belirtir.
+* @Table(name = "tasks"): Bu anotasyon, sınıfın veritabanında hangi tabloya karşılık geldiğini belirtir.
 * name parametresi ile tablo adı belirtilir.
 * */
-@Table(name = "blogs")
-// Blog(N) Categories(1)
-public class BlogEntity extends AuditingAwareBaseEntity implements Serializable {
+@Table(name = "tasks")
+// task(N) Categories(1)
+public class TaskEntity extends AuditingAwareBaseEntity implements Serializable {
 
     // Serileştirme
     public static final Long serialVersionUID = 1L;
 
     /*
-    * @Id: Bu anotasyon, blogId alanının birincil anahtar (primary key) olduğunu belirtir.
-    * @GeneratedValue(strategy = GenerationType.IDENTITY): Bu anotasyon, blogId alanının otomatik olarak
+    * @Id: Bu anotasyon, taskId alanının birincil anahtar (primary key) olduğunu belirtir.
+    * @GeneratedValue(strategy = GenerationType.IDENTITY): Bu anotasyon, taskId alanının otomatik olarak
     *   artan birincil anahtar olarak nasıl oluşturulacağını belirtir.
     * @Column: Bu anotasyon, sütun seviyesinde yapılandırmaları belirtir.
     *   Bu örnekte name, nullable, insertable ve updatable parametreleri ayarlanmıştır.
     * */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "blog_id", unique = true, nullable = false, insertable = true, updatable = false)
-    private Long blogId;
+    @Column(name = "task_id", unique = true, nullable = false, insertable = true, updatable = false)
+    private Long taskId;
 
 
-    //@Embedded: Bu anotasyon, BlogEntityEmbeddable sınıfının gömülü (embedded) bir bileşen olduğunu belirtir.
+    //@Embedded: Bu anotasyon, TaskEntityEmbeddable sınıfının gömülü (embedded) bir bileşen olduğunu belirtir.
     @Embedded
-    private BlogEntityEmbeddable blogEntityEmbeddable = new BlogEntityEmbeddable();
+    private TaskEntityEmbeddable taskEntityEmbeddable = new TaskEntityEmbeddable();
 
     /*
     * @CreationTimestamp: Bu anotasyon, systemDate alanının otomatik olarak oluşturulduğu
@@ -71,29 +71,29 @@ public class BlogEntity extends AuditingAwareBaseEntity implements Serializable 
     /*
     * @ManyToOne(fetch = FetchType.LAZY, optional = false):
     *   Bu anotasyon, relationCategoryEntity alanının birçoktan bir ilişkiyi temsil ettiğini belirtir.
-    *   Yani, bir blog öğesinin sadece bir kategorisi olabilir.
+    *   Yani, bir task öğesinin sadece bir kategorisi olabilir.
     *   fetch parametresi, ilişkili nesnenin ne zaman yükleneceğini belirler.
     *   FetchType.LAZY, ilişkili nesnenin gerektiğinde yükleneceği anlamına gelir.
     *   optional parametresi, bu ilişkinin zorunlu olup olmadığını belirtir.
-    *   false değeri, bir blogun mutlaka bir kategoriye sahip olması gerektiğini gösterir.
+    *   false değeri, bir taskin mutlaka bir kategoriye sahip olması gerektiğini gösterir.
     * @JoinColumn(name="category_id", nullable = false):
     *   Bu anotasyon, veritabanında bu ilişkinin tutulacağı sütunu belirtir.
     *   name parametresi ile sütun adı belirtilir.
     *   nullable parametresi, bu sütunun boş geçilemez olduğunu belirtir.
-    *   Yani, bir blogun mutlaka bir kategoriye ait olması gerektiği anlamına gelir.
-    * Blog ve Category Entity arasinda bir baglanti saglamamiz lazim
+    *   Yani, bir taskin mutlaka bir kategoriye ait olması gerektiği anlamına gelir.
+    * Task ve Category Entity arasinda bir baglanti saglamamiz lazim
     * */
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name="category_id",nullable = false)
     CategoryEntity relationCategoryEntity;
 
     // Constructor (Parametresiz)
-    public BlogEntity() {
+    public TaskEntity() {
     }
 
     // Constructor (Parametreli)
-    public BlogEntity(BlogEntityEmbeddable blogEntityEmbeddable, CategoryEntity relationCategoryEntity) {
-        this.blogEntityEmbeddable = blogEntityEmbeddable;
+    public TaskEntity(TaskEntityEmbeddable taskEntityEmbeddable, CategoryEntity relationCategoryEntity) {
+        this.taskEntityEmbeddable = taskEntityEmbeddable;
         this.relationCategoryEntity = relationCategoryEntity;
     }
 }

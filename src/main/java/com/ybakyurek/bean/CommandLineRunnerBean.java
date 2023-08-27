@@ -1,8 +1,8 @@
 package com.ybakyurek.bean;
 
-import com.ybakyurek.data.entity.BlogEntity;
+import com.ybakyurek.data.entity.TaskEntity;
 import com.ybakyurek.data.entity.CategoryEntity;
-import com.ybakyurek.data.repository.IBlogRepository;
+import com.ybakyurek.data.repository.ITaskRepository;
 import com.ybakyurek.data.repository.ICategoryRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -49,7 +49,7 @@ public class CommandLineRunnerBean {
     * Bu bağımlılıklar, Spring tarafından enjekte edilir.
     * */
     // Injection
-    private final IBlogRepository iBlogRepository;
+    private final ITaskRepository iTaskRepository;
     private final ICategoryRepository iCategoryRepository;
     private final ModelMapperBean modelMapperBean;
 
@@ -73,7 +73,7 @@ public class CommandLineRunnerBean {
     public void userData() {
         for (int i = 1; i <= 3; i++) {
             //String user= JOptionPane.showInputDialog(i+".ci Kategori Lütfen Kategori adını yazınız ");
-            Scanner scanner = new Scanner(System.in);
+           Scanner scanner = new Scanner(System.in);
             System.out.println("\n");
             System.out.println(i + ".ci Kategori Lütfen Kategori adını yazınız");
             String userName = scanner.nextLine().toUpperCase();
@@ -92,41 +92,56 @@ public class CommandLineRunnerBean {
 
     /*
     * Bu metot, önce userData metodu ile kategorileri oluşturur,
-    * sonra bu kategorileri alıp blog nesneleri ile ilişkilendirir ve veritabanına kaydeder.
-    * Son olarak, tüm kategori ve blog nesnelerini konsola yazdırır.
+    * sonra bu kategorileri alıp task nesneleri ile ilişkilendirir ve veritabanına kaydeder.
+    * Son olarak, tüm kategori ve task nesnelerini konsola yazdırır.
     * */
     @Bean
     @Transactional // save, delete, update
-    public void blogCategorySave() {
+    public void taskCategorySave() {
         // Kategory oluştursun ve listelesin
-        userData();
+//        userData();
+        categoryEntitySave("MARKET");
+        categoryEntitySave("KISISEL");
+        categoryEntitySave("IS");
         Iterable<CategoryEntity> categoryListIterable = categoryEntitiesList();
         List<CategoryEntity> categoryEntityList = new ArrayList<>();
         categoryListIterable.forEach(categoryEntityList::add);
 
-        // Blog oluşturmak (1)
-        BlogEntity blogEntity1=new BlogEntity();
-        blogEntity1.getBlogEntityEmbeddable().setHeader("header-1");
-        blogEntity1.getBlogEntityEmbeddable().setContent("içerik-1");
+        // task oluşturmak (1)
+        TaskEntity taskEntity1=new TaskEntity();
+        taskEntity1.getTaskEntityEmbeddable().setTitle("Alisveris");
+        taskEntity1.getTaskEntityEmbeddable().setContent("Ekmek,makarna,sut");
+        taskEntity1.getTaskEntityEmbeddable().setStatus(false);
         if(categoryEntityList!=null){
-            blogEntity1.setRelationCategoryEntity(categoryEntityList.get(0)); //ilk kategoriyi
-            iBlogRepository.save(blogEntity1);
+            taskEntity1.setRelationCategoryEntity(categoryEntityList.get(0)); //ilk kategoriyi
+            iTaskRepository.save(taskEntity1);
         }
 
 
-        // Blog oluşturmak (2)
-        BlogEntity blogEntity2=new BlogEntity();
-        blogEntity2.getBlogEntityEmbeddable().setHeader("header-2");
-        blogEntity2.getBlogEntityEmbeddable().setContent("içerik-2");
+        // task oluşturmak (2)
+        TaskEntity taskEntity2=new TaskEntity();
+        taskEntity2.getTaskEntityEmbeddable().setTitle("Kitap Oku");
+        taskEntity2.getTaskEntityEmbeddable().setContent("Gunde 30 dk ya da 20 sayfa kitap oku");
+        taskEntity2.getTaskEntityEmbeddable().setStatus(true);
         if(categoryEntityList!=null){
-            blogEntity2.setRelationCategoryEntity(categoryEntityList.get(1)); //ilk kategoriyi
-            iBlogRepository.save(blogEntity2);
+            taskEntity2.setRelationCategoryEntity(categoryEntityList.get(1)); //ilk kategoriyi
+            iTaskRepository.save(taskEntity2);
         }
 
-        // BlogListesi
+        // task oluşturmak (3)
+        TaskEntity taskEntity3=new TaskEntity();
+        taskEntity3.getTaskEntityEmbeddable().setTitle("Kodlama Egzersizi");
+        taskEntity3.getTaskEntityEmbeddable().setContent("Gunde 30 dk ya da 2 problem");
+        taskEntity3.getTaskEntityEmbeddable().setStatus(true);
+        if(categoryEntityList!=null){
+            taskEntity3.setRelationCategoryEntity(categoryEntityList.get(2)); //ilk kategoriyi
+            iTaskRepository.save(taskEntity3);
+        }
+
+        // TaskListesi
         categoryEntityList.forEach(System.out::println);
-        System.out.println(blogEntity1);
-        System.out.println(blogEntity2);
+        System.out.println(taskEntity1);
+        System.out.println(taskEntity2);
     }
 
     // CLR
@@ -138,7 +153,7 @@ public class CommandLineRunnerBean {
         return args -> {
             System.out.println("DATA444444444444");
             log.info("Data set oluşturulmuştur.");
-            blogCategorySave();
+            taskCategorySave();
         }; //end return
     } //end CommandLineRunnerBean method
 } // end class
