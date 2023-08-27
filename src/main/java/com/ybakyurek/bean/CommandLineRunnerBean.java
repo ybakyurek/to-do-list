@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//eski commit icin deneme
+
 // Lombok
 /*
 * Bu anotasyon, Lombok tarafından sağlanır ve sınıfın final olarak işaretlenmiş tüm alanları için bir constructor oluşturur.
