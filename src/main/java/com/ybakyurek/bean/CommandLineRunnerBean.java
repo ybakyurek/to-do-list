@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Scanner;
 
 // Lombok
-/*
+/* before test
 * Bu anotasyon, Lombok tarafından sağlanır ve sınıfın final olarak işaretlenmiş tüm alanları için bir constructor oluşturur.
 * Bu constructor, bu alanlara bağımlılıkları enjekte etmek için kullanılır.
 * */
