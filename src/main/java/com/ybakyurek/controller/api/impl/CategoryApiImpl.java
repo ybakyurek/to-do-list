@@ -70,7 +70,7 @@ public class CategoryApiImpl implements ICategoryApi<CategoryDto> {
     // CREATE
     // http://localhost:4444/category/api/v1/create
     @Override
-    @PostMapping(value = "create")
+    @PostMapping(value = "/create")
     public ResponseEntity<?> categoryApiCreate(@Valid @RequestBody CategoryDto categoryDto) {
         // return new ResponseEntity<>(iCategoryServices.categoryServiceCreate(categoryDto), HttpStatus.OK);
         // return  ResponseEntity.status(HttpStatus.OK).body(iCategoryServices.categoryServiceCreate(categoryDto));
@@ -84,39 +84,52 @@ public class CategoryApiImpl implements ICategoryApi<CategoryDto> {
     }
 
     // LIST
+    // http://localhost:4444/category/api/v1/list
     @Override
+    @GetMapping(value = "/list")
     public ResponseEntity<List<CategoryDto>> categoryApiList() {
-        return null;
+        return ResponseEntity.ok(iCategoryServices.categoryServiceList());
     }
 
     // FIND
+    // http://localhost:4444/category/api/v1/find/1
     @Override
-    public ResponseEntity<CategoryDto> categoryApiFind(Long id) {
-        return null;
+    @GetMapping(value = "/find/{id}")
+    public ResponseEntity<?> categoryApiFind(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok(iCategoryServices.categoryServiceFind(id));
     }
 
     // UPDATE
+    // http://localhost:4444/category/api/v1/update/1
+
     @Override
-    public ResponseEntity<CategoryDto> categoryApiUpdate(Long id, @Valid @RequestBody CategoryDto categoryDto) {
-        return null;
+    @PutMapping(value = "/update/{id}")
+    public ResponseEntity<?> categoryApiUpdate(@PathVariable(name = "id") Long id, @Valid @RequestBody CategoryDto categoryDto) {
+        return ResponseEntity.ok(iCategoryServices.categoryServiceUpdate(id,categoryDto));
     }
 
     // DELETE
+    // http://localhost:4444/category/api/v1/delete/1
     @Override
-    public ResponseEntity<CategoryDto> categoryApiDelete(Long id) {
-        return null;
+    @DeleteMapping(value = "/delete/{id}")
+    public ResponseEntity<?> categoryApiDelete (@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok(iCategoryServices.categoryServiceDelete(id));
     }
 
     ///////////////////////////////////////////////////////////////
     // ALL DELETE
+
     @Override
+    @GetMapping(value = "/all/delete")
     public ResponseEntity<String> categoryApiAllDelete() {
-        return null;
+        return ResponseEntity.ok(iCategoryServices.categoryServiceAllDelete());
     }
 
     // SPEED DATA
+    // http://localhost:4444/category/api/v1/speed/1
     @Override
-    public ResponseEntity<List<CategoryDto>> categoryApiSpeedData(int key) {
-        return null;
+    @GetMapping(value = "/speed/{id}")
+    public ResponseEntity<List<CategoryDto>> categoryApiSpeedData(Long key) {
+        return ResponseEntity.ok(iCategoryServices.categoryServiceSpeedData(key));
     }
 }

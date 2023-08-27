@@ -187,7 +187,7 @@ public class CategoryServicesImpl implements ICategoryServices<CategoryDto, Cate
     * oluşturulan DTO nesnelerini bir liste olarak sunar.
     * */
     @Override
-    public List<CategoryDto> categoryServiceSpeedData(int key) {
+    public List<CategoryDto> categoryServiceSpeedData(Long key) {
         CategoryDto categoryDto = null;
         List<CategoryDto> categoryDtoList=new ArrayList<>();
         int count = 0;
