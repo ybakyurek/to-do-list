@@ -123,3 +123,67 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:100) ~[spring-data-jpa-3.1.2.jar:3.1.2]
 	... 51 common frames omitted
 
+2023-08-29T15:53:43.498+03:00  INFO 5625 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Starting ToDoListApplication using Java 17.0.8 with PID 5625 (/Users/yba/Documents/GitHub/to-do-list/target/classes started by yba in /Users/yba/Documents/GitHub/to-do-list)
+2023-08-29T15:53:43.502+03:00  INFO 5625 --- [restartedMain] com.ybakyurek.ToDoListApplication        : The following 1 profile is active: "frontend"
+2023-08-29T15:53:43.643+03:00  INFO 5625 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-29T15:53:43.643+03:00  INFO 5625 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-29T15:53:46.367+03:00  INFO 5625 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-29T15:53:46.445+03:00  INFO 5625 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interfaces.
+2023-08-29T15:53:47.646+03:00  INFO 5625 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
+2023-08-29T15:53:47.658+03:00  INFO 5625 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-29T15:53:47.659+03:00  INFO 5625 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-29T15:53:47.722+03:00  INFO 5625 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-29T15:53:47.723+03:00  INFO 5625 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4079 ms
+2023-08-29T15:53:47.937+03:00  INFO 5625 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-29T15:53:48.457+03:00  INFO 5625 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4cf9b326
+2023-08-29T15:53:48.461+03:00  INFO 5625 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-29T15:53:48.481+03:00  INFO 5625 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2023-08-29T15:53:48.600+03:00 DEBUG 5625 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2023-08-29T15:53:48.601+03:00 DEBUG 5625 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2023-08-29T15:53:49.236+03:00  INFO 5625 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-29T15:53:50.817+03:00  INFO 5625 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T15:53:51.759+03:00  WARN 5625 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-29T15:53:51.903+03:00 DEBUG 5625 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-08-29T15:53:51.950+03:00  INFO 5625 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-29T15:53:52.047+03:00 DEBUG 5625 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2023-08-29T15:53:52.612+03:00 DEBUG 5625 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2023-08-29T15:53:52.624+03:00 DEBUG 5625 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-08-29T15:53:53.272+03:00  INFO 5625 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-29T15:53:53.280+03:00  INFO 5625 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-08-29T15:53:53.368+03:00  INFO 5625 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 4444 (http) with context path ''
+2023-08-29T15:53:53.386+03:00  INFO 5625 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Started ToDoListApplication in 10.821 seconds (process running for 12.295)
+2023-08-29T15:53:53.699+03:00  INFO 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-29T15:53:53.701+03:00  INFO 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-29T15:53:53.702+03:00 DEBUG 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-08-29T15:53:53.702+03:00 DEBUG 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-08-29T15:53:53.702+03:00 DEBUG 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-08-29T15:53:53.704+03:00 DEBUG 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4426a299
+2023-08-29T15:53:53.706+03:00 DEBUG 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6549bfca
+2023-08-29T15:53:53.707+03:00 DEBUG 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-08-29T15:53:53.708+03:00  INFO 5625 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2023-08-29T15:54:24.234+03:00 DEBUG 5625 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2023-08-29T15:54:24.246+03:00 DEBUG 5625 --- [http-nio-4444-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2023-08-29T15:54:24.314+03:00 DEBUG 5625 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-29T15:54:24.350+03:00 DEBUG 5625 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2023-08-29T15:54:24.358+03:00 DEBUG 5625 --- [http-nio-4444-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2023-08-29T15:54:24.395+03:00 DEBUG 5625 --- [http-nio-4444-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2023-08-29T15:54:24.397+03:00 DEBUG 5625 --- [http-nio-4444-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:4444/swagger-ui/oauth2-re (truncated)...]
+2023-08-29T15:54:24.406+03:00 DEBUG 5625 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-29T15:54:24.469+03:00 DEBUG 5625 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2023-08-29T15:54:24.472+03:00 DEBUG 5625 --- [http-nio-4444-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2023-08-29T15:54:24.739+03:00  WARN 5625 --- [http-nio-4444-exec-3] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ybakyurek.controller.api.impl.TaskApiImpl
+2023-08-29T15:54:24.887+03:00  WARN 5625 --- [http-nio-4444-exec-3] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ybakyurek.controller.api.RootApi
+2023-08-29T15:54:24.891+03:00  WARN 5625 --- [http-nio-4444-exec-3] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ybakyurek.error.CustomErrorHandleWebRequest
+2023-08-29T15:54:24.942+03:00  INFO 5625 --- [http-nio-4444-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 419 ms
+2023-08-29T15:54:24.966+03:00 DEBUG 5625 --- [http-nio-4444-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2023-08-29T15:54:24.967+03:00 DEBUG 5625 --- [http-nio-4444-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["{"openapi":"3.0.1","info":{"title":"to-do-list","description":"Demo to-do-list project for Spring Bo (truncated)..."]
+2023-08-29T15:54:24.968+03:00 DEBUG 5625 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-29T15:54:31.587+03:00 DEBUG 5625 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/task/api/v1/create", parameters={}
+2023-08-29T15:54:31.588+03:00 DEBUG 5625 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiCreate(TaskDto)
+2023-08-29T15:54:31.619+03:00 DEBUG 5625 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [TaskDto(title=stringstri, content=stringstri, state=true)]
+2023-08-29T15:54:31.877+03:00 DEBUG 5625 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2023-08-29T15:54:31.878+03:00 DEBUG 5625 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(title=stringstri, content=stringstri, state=true)]
+2023-08-29T15:54:31.881+03:00 DEBUG 5625 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-29T16:01:35.518+03:00  INFO 5625 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-29T16:01:35.528+03:00  INFO 5625 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-29T16:01:35.545+03:00  INFO 5625 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
