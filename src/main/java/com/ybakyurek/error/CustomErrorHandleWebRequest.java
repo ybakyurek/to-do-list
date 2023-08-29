@@ -1,6 +1,6 @@
 package com.ybakyurek.error;
 
-import com.ybakyurek.assist.FrontEnt;
+import com.ybakyurek.assist.FrontendURL;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
@@ -24,7 +24,7 @@ import java.util.Map;
 
 // API'ye gelen isteklere belirtilen origin (köken) adresinden gelen isteklere izin verilmesini sağlar.
 // FrontEnt.REACT_URL burada tanımlanır.
-@CrossOrigin(origins = FrontEnt.REACT_URL)
+@CrossOrigin(origins = FrontendURL.REACT_URL)
 
 //Bu sınıf, ErrorController arayüzünü uygular ve özel hata işleme yöntemleri sağlar.
 public class CustomErrorHandleWebRequest implements ErrorController {

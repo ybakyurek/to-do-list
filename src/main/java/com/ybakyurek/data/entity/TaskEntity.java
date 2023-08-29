@@ -1,7 +1,6 @@
 package com.ybakyurek.data.entity;
 
 import com.ybakyurek.auditing.AuditingAwareBaseEntity;
-import com.ybakyurek.data.TaskEntityEmbeddable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -41,13 +40,8 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
     * */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "task_id", unique = true, nullable = false, insertable = true, updatable = false)
+    @Column(name = "taskId", unique = true, nullable = false, insertable = true, updatable = false)
     private Long taskId;
-
-
-    //@Embedded: Bu anotasyon, TaskEntityEmbeddable sınıfının gömülü (embedded) bir bileşen olduğunu belirtir.
-    @Embedded
-    private TaskEntityEmbeddable taskEntityEmbeddable = new TaskEntityEmbeddable();
 
     /*
     * @CreationTimestamp: Bu anotasyon, systemDate alanının otomatik olarak oluşturulduğu
@@ -56,6 +50,19 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date systemDate;
+
+    // TITLE
+    @Column(name = "title", length = 500, columnDefinition = "varchar(500) default 'title'")
+    private String title;
+
+    // CONTENT
+    @Lob
+    @Column(name = "content", length = 500, columnDefinition = "varchar(500) default 'content'")
+    private String content;
+
+    // STATUS
+    @Column(name = "state")
+    private boolean state;
 
 
    /*
@@ -83,17 +90,11 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
     *   Yani, bir taskin mutlaka bir kategoriye ait olması gerektiği anlamına gelir.
     * Task ve Category Entity arasinda bir baglanti saglamamiz lazim
     * */
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name="category_id",nullable = false)
-    CategoryEntity relationCategoryEntity;
 
     // Constructor (Parametresiz)
     public TaskEntity() {
     }
 
     // Constructor (Parametreli)
-    public TaskEntity(TaskEntityEmbeddable taskEntityEmbeddable, CategoryEntity relationCategoryEntity) {
-        this.taskEntityEmbeddable = taskEntityEmbeddable;
-        this.relationCategoryEntity = relationCategoryEntity;
-    }
+
 }

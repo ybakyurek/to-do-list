@@ -41,4 +41,6 @@ public class TaskDto extends AuditingAwareBaseDto implements Serializable {
     @NotEmpty(message = "{task.content.validation.constraints.NotNull.message}")
     @Size(min=10,message = "{task.content.least.validation.constraints.NotNull.message}")
     private String content;
+
+    private Boolean state;
 }

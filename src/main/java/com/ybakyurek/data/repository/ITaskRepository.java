@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
 public interface ITaskRepository extends CrudRepository<TaskEntity,Long> {
 
     // Delivered Query
-    TaskEntity findTaskEntityByTaskEntityEmbeddableTitle(String title);
+    TaskEntity findTaskEntityByTitle(String title);
 }
