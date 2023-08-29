@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Log4j2 //Lombok anotasyonu, sınıfa Log4j2 adında bir logger nesnesi ekler.
     // Bu logger nesnesi, sınıf içindeki loglama işlemleri için kullanılabilir.
 
-public class BlogDto extends AuditingAwareBaseDto implements Serializable {
+public class TaskDto extends AuditingAwareBaseDto implements Serializable {
 
     // Serileştirme
     public static final Long serialVersionUID=1L;
@@ -32,13 +32,15 @@ public class BlogDto extends AuditingAwareBaseDto implements Serializable {
         * icerisinde gosterilebilir.
         * Curly brackets kullanarak ifade edebiliriz.
     * */
-    // HEADER
-    @NotEmpty(message = "{blog.header.validation.constraints.NotNull.message}")
-    @Size(min=10,message = "{blog.header.least.validation.constraints.NotNull.message}")
-    private String header;
+    // TITLE
+    @NotEmpty(message = "{task.title.validation.constraints.NotNull.message}")
+    @Size(min=10,message = "{task.title.least.validation.constraints.NotNull.message}")
+    private String title;
 
     // CONTENT
-    @NotEmpty(message = "{blog.content.validation.constraints.NotNull.message}")
-    @Size(min=10,message = "{blog.content.least.validation.constraints.NotNull.message}")
+    @NotEmpty(message = "{task.content.validation.constraints.NotNull.message}")
+    @Size(min=10,message = "{task.content.least.validation.constraints.NotNull.message}")
     private String content;
+
+    private Boolean state;
 }
