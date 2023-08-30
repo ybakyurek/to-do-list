@@ -336,3 +336,44 @@ Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieva
 2023-08-30T13:27:47.162+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing ["{"openapi":"3.0.1","info":{"title":"to-do-list","description":"Demo to-do-list project for Spring Bo (truncated)..."]
 2023-08-30T13:27:47.163+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2023-08-30T14:30:07.644+03:00  WARN 1898 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m26s726ms).
+2023-08-30T15:38:18.434+03:00  INFO 1898 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-30T15:38:18.460+03:00  INFO 1898 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-30T15:38:18.465+03:00  INFO 1898 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-30T15:41:53.861+03:00  INFO 773 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Starting ToDoListApplication using Java 17.0.8 with PID 773 (/Users/yba/Documents/GitHub/to-do-list/target/classes started by yba in /Users/yba/Documents/GitHub/to-do-list)
+2023-08-30T15:41:53.864+03:00  INFO 773 --- [restartedMain] com.ybakyurek.ToDoListApplication        : The following 1 profile is active: "frontend"
+2023-08-30T15:41:53.989+03:00  INFO 773 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-30T15:41:53.990+03:00  INFO 773 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-30T15:41:56.800+03:00  INFO 773 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-30T15:41:56.945+03:00  INFO 773 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interfaces.
+2023-08-30T15:41:58.405+03:00  INFO 773 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
+2023-08-30T15:41:58.435+03:00  INFO 773 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-30T15:41:58.435+03:00  INFO 773 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-30T15:41:58.578+03:00  INFO 773 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-30T15:41:58.580+03:00  INFO 773 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4588 ms
+2023-08-30T15:41:58.822+03:00  INFO 773 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-30T15:41:59.117+03:00  INFO 773 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f3fe2d8
+2023-08-30T15:41:59.119+03:00  INFO 773 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-30T15:41:59.130+03:00  INFO 773 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2023-08-30T15:41:59.212+03:00 DEBUG 773 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2023-08-30T15:41:59.212+03:00 DEBUG 773 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2023-08-30T15:42:00.476+03:00  INFO 773 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-30T15:42:03.430+03:00  INFO 773 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-30T15:42:04.761+03:00  WARN 773 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-30T15:42:04.996+03:00 DEBUG 773 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-08-30T15:42:05.066+03:00  INFO 773 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-30T15:42:05.230+03:00 DEBUG 773 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2023-08-30T15:42:05.776+03:00 DEBUG 773 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2023-08-30T15:42:05.794+03:00 DEBUG 773 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-08-30T15:42:06.548+03:00  INFO 773 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-30T15:42:06.554+03:00  INFO 773 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-08-30T15:42:06.663+03:00  INFO 773 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 4444 (http) with context path ''
+2023-08-30T15:42:06.680+03:00  INFO 773 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Started ToDoListApplication in 13.958 seconds (process running for 15.619)
+2023-08-30T15:42:07.224+03:00  INFO 773 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-30T15:42:07.224+03:00  INFO 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-30T15:42:07.224+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-08-30T15:42:07.225+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-08-30T15:42:07.225+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-08-30T15:42:07.226+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@22af61ca
+2023-08-30T15:42:07.227+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7f8c4b0e
+2023-08-30T15:42:07.227+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-08-30T15:42:07.228+03:00  INFO 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms

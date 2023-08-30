@@ -22,7 +22,7 @@ import TaskUpdate from './component/task/TaskUpdate';
 
 
 //CLASS COMPONENT
-export default class TaskRouter extends Component {
+class TaskRouter extends Component {
 
     //Component gorunen ismi
     static displayName = "Task_Router";
@@ -43,7 +43,7 @@ export default class TaskRouter extends Component {
         return (
             <React.Fragment>
                 
-                <Header logo="fa-solid fa-warehouse"/> {/* Use the Header component */}
+                <Header logo="fa-solid fa-house "/> {/* Use the Header component */}
                 
                 <div className="container">
                     <Routes>
@@ -60,10 +60,12 @@ export default class TaskRouter extends Component {
                 </div>
 
 
-                <Footer copy="&copy; 2023" />
+                <Footer copy="&copy; 2023 Copyright: " />
                 
             </React.Fragment>
         )
     }
 }
 
+// Higher Order Component
+export default withTranslation()(TaskRouter);
