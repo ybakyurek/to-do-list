@@ -26,6 +26,4 @@ public interface ITaskApi<D> {
     // ALL DELETE
     public ResponseEntity<String> taskApiAllDelete();
 
-    // SPEED DATA
-    public ResponseEntity<List<D>> taskApiSpeedData(Long key);
 }
