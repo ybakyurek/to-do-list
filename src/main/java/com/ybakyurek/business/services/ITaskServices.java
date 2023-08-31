@@ -1,6 +1,5 @@
 package com.ybakyurek.business.services;
 
-
 import java.util.List;
 
 // D: Dto
@@ -11,7 +10,6 @@ public interface ITaskServices<D, E> {
     public D entityToDto(E e);
 
     public E dtoToEntity(D d);
-
 
     // C R U D
     // CREATE
@@ -24,10 +22,8 @@ public interface ITaskServices<D, E> {
     public D taskServiceFindById(Long id);
 
     // UPDATE
-    public D taskServiceUpdate(Long id,D d);
+    public D taskServiceUpdate(Long id, D d);
 
     // DELETE
     public D taskServiceDeleteById(Long id);
 }
-
-

@@ -1,379 +1,274 @@
-2023-08-30T12:01:06.165+03:00  INFO 1898 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Starting ToDoListApplication using Java 17.0.8 with PID 1898 (/Users/yba/Documents/GitHub/to-do-list/target/classes started by yba in /Users/yba/Documents/GitHub/to-do-list)
-2023-08-30T12:01:06.171+03:00  INFO 1898 --- [restartedMain] com.ybakyurek.ToDoListApplication        : The following 1 profile is active: "frontend"
-2023-08-30T12:01:06.296+03:00  INFO 1898 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-08-30T12:01:06.296+03:00  INFO 1898 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-08-30T12:01:09.076+03:00  INFO 1898 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-08-30T12:01:09.171+03:00  INFO 1898 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interfaces.
-2023-08-30T12:01:10.457+03:00  INFO 1898 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
-2023-08-30T12:01:10.482+03:00  INFO 1898 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-30T12:01:10.482+03:00  INFO 1898 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-08-30T12:01:10.633+03:00  INFO 1898 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-30T12:01:10.634+03:00  INFO 1898 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4335 ms
-2023-08-30T12:01:10.837+03:00  INFO 1898 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-08-30T12:01:16.178+03:00 ERROR 1898 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
-
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:899) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:824) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.getConnectionUrl(H2ConsoleAutoConfiguration.java:94) ~[spring-boot-autoconfigure-3.1.2.jar:3.1.2]
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
-	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575) ~[na:na]
-	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622) ~[na:na]
-	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627) ~[na:na]
-	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.logDataSources(H2ConsoleAutoConfiguration.java:86) ~[spring-boot-autoconfigure-3.1.2.jar:3.1.2]
-	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:69) ~[spring-boot-autoconfigure-3.1.2.jar:3.1.2]
-	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.withThreadContextClassLoader(H2ConsoleAutoConfiguration.java:78) ~[spring-boot-autoconfigure-3.1.2.jar:3.1.2]
-	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:69) ~[spring-boot-autoconfigure-3.1.2.jar:3.1.2]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:647) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:201) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:96) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:85) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:261) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:235) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4886) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:846) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:241) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:918) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:485) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:489) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:183) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:161) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.2.jar:3.1.2]
-	at com.ybakyurek.ToDoListApplication.main(ToDoListApplication.java:80) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.2.jar:3.1.2]
-Caused by: com.mysql.cj.exceptions.CJException: Public Key Retrieval is not allowed
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:124) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:153) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:445) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:211) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1369) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:133) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:843) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	... 92 common frames omitted
-Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	... 98 common frames omitted
-
-2023-08-30T12:01:16.375+03:00 DEBUG 1898 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
-2023-08-30T12:01:16.375+03:00 DEBUG 1898 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
-2023-08-30T12:01:17.951+03:00  INFO 1898 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-08-30T12:01:18.104+03:00  INFO 1898 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-08-30T12:01:23.143+03:00 ERROR 1898 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
-
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:899) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:824) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:449) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:242) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:316) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:152) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:34) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:239) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:216) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:230) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:198) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:166) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1380) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1451) ~[hibernate-core-6.2.6.Final.jar:6.2.6.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.11.jar:6.0.11]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.11.jar:6.0.11]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.11.jar:6.0.11]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.11.jar:6.0.11]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1155) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.2.jar:3.1.2]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.2.jar:3.1.2]
-	at com.ybakyurek.ToDoListApplication.main(ToDoListApplication.java:80) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.2.jar:3.1.2]
-Caused by: com.mysql.cj.exceptions.CJException: Public Key Retrieval is not allowed
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:124) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:153) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:445) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:211) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1369) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:133) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:843) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	... 53 common frames omitted
-Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	... 59 common frames omitted
-
-2023-08-30T12:01:25.725+03:00  INFO 1898 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-08-30T12:01:25.796+03:00  INFO 1898 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@334b6158
-2023-08-30T12:01:25.799+03:00  INFO 1898 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-08-30T12:01:25.955+03:00  INFO 1898 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-08-30T12:01:27.367+03:00  WARN 1898 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-08-30T12:01:27.637+03:00 DEBUG 1898 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-08-30T12:01:27.734+03:00  INFO 1898 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-08-30T12:01:27.944+03:00 DEBUG 1898 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
-2023-08-30T12:01:28.508+03:00 DEBUG 1898 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2023-08-30T12:01:28.525+03:00 DEBUG 1898 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-08-30T12:01:29.545+03:00  INFO 1898 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-08-30T12:01:29.551+03:00  INFO 1898 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-08-30T12:01:29.681+03:00  INFO 1898 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 4444 (http) with context path ''
-2023-08-30T12:01:29.701+03:00  INFO 1898 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Started ToDoListApplication in 25.126 seconds (process running for 28.109)
-2023-08-30T12:01:30.213+03:00  INFO 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-08-30T12:01:30.214+03:00  INFO 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-08-30T12:01:30.214+03:00 DEBUG 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2023-08-30T12:01:30.214+03:00 DEBUG 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2023-08-30T12:01:30.214+03:00 DEBUG 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2023-08-30T12:01:30.216+03:00 DEBUG 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@49595298
-2023-08-30T12:01:30.217+03:00 DEBUG 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5e6ee2b2
-2023-08-30T12:01:30.217+03:00 DEBUG 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2023-08-30T12:01:30.217+03:00  INFO 1898 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2023-08-30T12:16:03.095+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2023-08-30T12:16:03.161+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2023-08-30T12:16:03.861+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T12:16:03.903+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
-2023-08-30T12:16:03.903+03:00 DEBUG 1898 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/js/template.js", parameters={}
-2023-08-30T12:16:03.907+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-08-30T12:16:03.907+03:00 DEBUG 1898 --- [http-nio-4444-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-08-30T12:16:03.947+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T12:16:03.947+03:00 DEBUG 1898 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T12:16:04.341+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
-2023-08-30T12:16:04.343+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-08-30T12:16:04.347+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2023-08-30T12:16:04.348+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2023-08-30T12:16:04.364+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2023-08-30T12:16:04.367+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.error.CustomErrorHandleWebRequest#springMyHandleErrorMethod(WebRequest)
-2023-08-30T12:16:04.428+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
-2023-08-30T12:16:04.437+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResult(path=/favicon.ico, validationErrors=null, message=No message available, error=null, status (truncated)...]
-2023-08-30T12:16:04.486+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2023-08-30T12:53:04.769+03:00 DEBUG 1898 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2023-08-30T12:53:04.773+03:00 DEBUG 1898 --- [http-nio-4444-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8]
-2023-08-30T12:53:04.781+03:00 DEBUG 1898 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T12:53:04.785+03:00 DEBUG 1898 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
-2023-08-30T12:53:04.786+03:00 DEBUG 1898 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/js/template.js", parameters={}
-2023-08-30T12:53:04.786+03:00 DEBUG 1898 --- [http-nio-4444-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-08-30T12:53:04.787+03:00 DEBUG 1898 --- [http-nio-4444-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-08-30T12:53:04.792+03:00 DEBUG 1898 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T12:53:04.792+03:00 DEBUG 1898 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T12:53:05.066+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/apple-touch-icon-precomposed.png", parameters={}
-2023-08-30T12:53:05.067+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-08-30T12:53:05.071+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2023-08-30T12:53:05.071+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2023-08-30T12:53:05.072+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2023-08-30T12:53:05.073+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.error.CustomErrorHandleWebRequest#springMyHandleErrorMethod(WebRequest)
-2023-08-30T12:53:05.075+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2023-08-30T12:53:05.075+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResult(path=/apple-touch-icon-precomposed.png, validationErrors=null, message=No message availabl (truncated)...]
-2023-08-30T12:53:05.076+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2023-08-30T12:53:05.078+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/apple-touch-icon.png", parameters={}
-2023-08-30T12:53:05.079+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-08-30T12:53:05.081+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2023-08-30T12:53:05.081+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2023-08-30T12:53:05.082+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2023-08-30T12:53:05.082+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.error.CustomErrorHandleWebRequest#springMyHandleErrorMethod(WebRequest)
-2023-08-30T12:53:05.083+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2023-08-30T12:53:05.083+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [ApiResult(path=/apple-touch-icon.png, validationErrors=null, message=No message available, error=nul (truncated)...]
-2023-08-30T12:53:05.084+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2023-08-30T13:27:46.077+03:00 DEBUG 1898 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
-2023-08-30T13:27:46.080+03:00 DEBUG 1898 --- [http-nio-4444-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2023-08-30T13:27:46.126+03:00 DEBUG 1898 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2023-08-30T13:27:46.131+03:00 DEBUG 1898 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
-2023-08-30T13:27:46.132+03:00 DEBUG 1898 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
-2023-08-30T13:27:46.132+03:00 DEBUG 1898 --- [http-nio-4444-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2023-08-30T13:27:46.132+03:00 DEBUG 1898 --- [http-nio-4444-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2023-08-30T13:27:46.136+03:00 DEBUG 1898 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
-2023-08-30T13:27:46.138+03:00 DEBUG 1898 --- [http-nio-4444-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2023-08-30T13:27:46.148+03:00 DEBUG 1898 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2023-08-30T13:27:46.152+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
-2023-08-30T13:27:46.155+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2023-08-30T13:27:46.158+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
-2023-08-30T13:27:46.159+03:00 DEBUG 1898 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2023-08-30T13:27:46.160+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2023-08-30T13:27:46.163+03:00 DEBUG 1898 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2023-08-30T13:27:46.164+03:00 DEBUG 1898 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T13:27:46.182+03:00 DEBUG 1898 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T13:27:46.418+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
-2023-08-30T13:27:46.420+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
-2023-08-30T13:27:46.425+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
-2023-08-30T13:27:46.426+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:4444/swagger-ui/oauth2-re (truncated)...]
-2023-08-30T13:27:46.427+03:00 DEBUG 1898 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T13:27:46.506+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
-2023-08-30T13:27:46.507+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
-2023-08-30T13:27:46.933+03:00  WARN 1898 --- [http-nio-4444-exec-4] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ybakyurek.controller.api.impl.TaskApiImpl
-2023-08-30T13:27:47.083+03:00  WARN 1898 --- [http-nio-4444-exec-4] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ybakyurek.controller.api.RootApi
-2023-08-30T13:27:47.088+03:00  WARN 1898 --- [http-nio-4444-exec-4] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.ybakyurek.error.CustomErrorHandleWebRequest
-2023-08-30T13:27:47.142+03:00  INFO 1898 --- [http-nio-4444-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 562 ms
-2023-08-30T13:27:47.162+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
-2023-08-30T13:27:47.162+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing ["{"openapi":"3.0.1","info":{"title":"to-do-list","description":"Demo to-do-list project for Spring Bo (truncated)..."]
-2023-08-30T13:27:47.163+03:00 DEBUG 1898 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2023-08-30T14:30:07.644+03:00  WARN 1898 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m26s726ms).
-2023-08-30T15:38:18.434+03:00  INFO 1898 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-08-30T15:38:18.460+03:00  INFO 1898 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-08-30T15:38:18.465+03:00  INFO 1898 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-08-30T15:41:53.861+03:00  INFO 773 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Starting ToDoListApplication using Java 17.0.8 with PID 773 (/Users/yba/Documents/GitHub/to-do-list/target/classes started by yba in /Users/yba/Documents/GitHub/to-do-list)
-2023-08-30T15:41:53.864+03:00  INFO 773 --- [restartedMain] com.ybakyurek.ToDoListApplication        : The following 1 profile is active: "frontend"
-2023-08-30T15:41:53.989+03:00  INFO 773 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-08-30T15:41:53.990+03:00  INFO 773 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-08-30T15:41:56.800+03:00  INFO 773 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-08-30T15:41:56.945+03:00  INFO 773 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interfaces.
-2023-08-30T15:41:58.405+03:00  INFO 773 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
-2023-08-30T15:41:58.435+03:00  INFO 773 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-30T15:41:58.435+03:00  INFO 773 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2023-08-30T15:41:58.578+03:00  INFO 773 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-30T15:41:58.580+03:00  INFO 773 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4588 ms
-2023-08-30T15:41:58.822+03:00  INFO 773 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-08-30T15:41:59.117+03:00  INFO 773 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f3fe2d8
-2023-08-30T15:41:59.119+03:00  INFO 773 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-08-30T15:41:59.130+03:00  INFO 773 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/blog?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
-2023-08-30T15:41:59.212+03:00 DEBUG 773 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
-2023-08-30T15:41:59.212+03:00 DEBUG 773 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
-2023-08-30T15:42:00.476+03:00  INFO 773 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-08-30T15:42:03.430+03:00  INFO 773 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-08-30T15:42:04.761+03:00  WARN 773 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-08-30T15:42:04.996+03:00 DEBUG 773 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-08-30T15:42:05.066+03:00  INFO 773 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-08-30T15:42:05.230+03:00 DEBUG 773 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
-2023-08-30T15:42:05.776+03:00 DEBUG 773 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2023-08-30T15:42:05.794+03:00 DEBUG 773 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-08-30T15:42:06.548+03:00  INFO 773 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-08-30T15:42:06.554+03:00  INFO 773 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-08-30T15:42:06.663+03:00  INFO 773 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 4444 (http) with context path ''
-2023-08-30T15:42:06.680+03:00  INFO 773 --- [restartedMain] com.ybakyurek.ToDoListApplication        : Started ToDoListApplication in 13.958 seconds (process running for 15.619)
-2023-08-30T15:42:07.224+03:00  INFO 773 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-08-30T15:42:07.224+03:00  INFO 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-08-30T15:42:07.224+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2023-08-30T15:42:07.225+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2023-08-30T15:42:07.225+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2023-08-30T15:42:07.226+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@22af61ca
-2023-08-30T15:42:07.227+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7f8c4b0e
-2023-08-30T15:42:07.227+03:00 DEBUG 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2023-08-30T15:42:07.228+03:00  INFO 773 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-08-31T15:20:27.480+03:00  INFO 10942 --- [restartedMain] com.ybakyurek.ToDoList                   : Starting ToDoList using Java 17.0.8 with PID 10942 (/Users/yba/Documents/GitHub/to-do-list/target/classes started by yba in /Users/yba/Documents/GitHub/to-do-list)
+2023-08-31T15:20:27.483+03:00  INFO 10942 --- [restartedMain] com.ybakyurek.ToDoList                   : The following 1 profile is active: "frontend"
+2023-08-31T15:20:27.587+03:00  INFO 10942 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-31T15:20:27.588+03:00  INFO 10942 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-31T15:20:30.414+03:00  INFO 10942 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31T15:20:30.543+03:00  INFO 10942 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interfaces.
+2023-08-31T15:20:32.061+03:00  INFO 10942 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 4444 (http)
+2023-08-31T15:20:32.074+03:00  INFO 10942 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-31T15:20:32.074+03:00  INFO 10942 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-31T15:20:32.136+03:00  INFO 10942 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-31T15:20:32.137+03:00  INFO 10942 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4547 ms
+2023-08-31T15:20:32.386+03:00  INFO 10942 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-31T15:20:32.964+03:00  INFO 10942 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9044d8d
+2023-08-31T15:20:32.968+03:00  INFO 10942 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-31T15:20:32.985+03:00  INFO 10942 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/todo?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false'
+2023-08-31T15:20:33.123+03:00 DEBUG 10942 --- [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2023-08-31T15:20:33.123+03:00 DEBUG 10942 --- [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2023-08-31T15:20:34.186+03:00  INFO 10942 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-31T15:20:36.540+03:00  INFO 10942 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31T15:20:37.634+03:00  WARN 10942 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31T15:20:37.913+03:00 DEBUG 10942 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-08-31T15:20:38.044+03:00  INFO 10942 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-31T15:20:38.229+03:00 DEBUG 10942 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2023-08-31T15:20:38.801+03:00 DEBUG 10942 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2023-08-31T15:20:38.812+03:00 DEBUG 10942 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-08-31T15:20:39.785+03:00  INFO 10942 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-08-31T15:20:39.793+03:00  INFO 10942 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-08-31T15:20:39.948+03:00  INFO 10942 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 4444 (http) with context path ''
+2023-08-31T15:20:39.975+03:00  INFO 10942 --- [restartedMain] com.ybakyurek.ToDoList                   : Started ToDoList in 13.633 seconds (process running for 15.055)
+2023-08-31T15:20:39.986+03:00  INFO 10942 --- [restartedMain] c.ybakyurek.bean.CommandLineRunnerBean   : CommandLineRunner Çalıştı
+2023-08-31T15:20:40.558+03:00  INFO 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-31T15:20:40.558+03:00  INFO 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-31T15:20:40.558+03:00 DEBUG 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-08-31T15:20:40.559+03:00 DEBUG 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-08-31T15:20:40.559+03:00 DEBUG 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-08-31T15:20:40.560+03:00 DEBUG 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7e53c3ec
+2023-08-31T15:20:40.561+03:00 DEBUG 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@9fdf778
+2023-08-31T15:20:40.562+03:00 DEBUG 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-08-31T15:20:40.562+03:00  INFO 10942 --- [RMI TCP Connection(3)-10.22.180.64] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-08-31T15:22:34.939+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:22:34.962+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:22:35.349+03:00  INFO 10942 --- [http-nio-4444-exec-1] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:22:35.370+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:22:35.372+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:22:35.427+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:22:35.440+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:22:35.441+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:22:35.451+03:00  INFO 10942 --- [http-nio-4444-exec-2] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:22:35.451+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:22:35.452+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:22:35.453+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:23:49.932+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:23:49.933+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:23:49.946+03:00  INFO 10942 --- [http-nio-4444-exec-3] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:23:49.947+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:23:49.947+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:23:49.949+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:23:49.963+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:23:49.965+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:23:49.982+03:00  INFO 10942 --- [http-nio-4444-exec-4] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:23:49.983+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:23:49.983+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:23:49.986+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:26:16.580+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:26:16.581+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:26:16.599+03:00  INFO 10942 --- [http-nio-4444-exec-5] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:26:16.600+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:26:16.601+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:26:16.604+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:26:16.621+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:26:16.621+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:26:16.635+03:00  INFO 10942 --- [http-nio-4444-exec-6] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:26:16.636+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:26:16.637+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:26:16.638+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:26:41.199+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:26:41.201+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:26:41.213+03:00  INFO 10942 --- [http-nio-4444-exec-7] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:26:41.214+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:26:41.214+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:26:41.215+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:26:41.225+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:26:41.225+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:26:41.233+03:00  INFO 10942 --- [http-nio-4444-exec-8] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:26:41.233+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:26:41.234+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:26:41.235+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:26:53.444+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:26:53.446+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:26:53.457+03:00  INFO 10942 --- [http-nio-4444-exec-9] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:26:53.458+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:26:53.459+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:26:53.461+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:26:53.475+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:26:53.475+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:26:53.481+03:00  INFO 10942 --- [http-nio-4444-exec-10] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:26:53.482+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:26:53.482+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:26:53.484+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:32:05.584+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:32:05.590+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:32:05.596+03:00  INFO 10942 --- [http-nio-4444-exec-1] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:32:05.597+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:32:05.597+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:32:05.598+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:32:27.389+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:32:27.392+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:32:27.400+03:00  INFO 10942 --- [http-nio-4444-exec-2] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:32:27.401+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:32:27.402+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:32:27.405+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:33:02.395+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:33:02.396+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:33:02.405+03:00  INFO 10942 --- [http-nio-4444-exec-3] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:33:02.406+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:33:02.406+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:33:02.407+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:33:51.052+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:33:51.055+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:33:51.068+03:00  INFO 10942 --- [http-nio-4444-exec-4] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:33:51.070+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:33:51.071+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:33:51.073+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:33:51.083+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:33:51.084+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:33:51.096+03:00  INFO 10942 --- [http-nio-4444-exec-5] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:33:51.096+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:33:51.097+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:33:51.098+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:34:20.464+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:34:20.466+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:34:20.483+03:00  INFO 10942 --- [http-nio-4444-exec-6] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:34:20.484+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:34:20.484+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:34:20.486+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:34:20.504+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:34:20.505+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:34:20.515+03:00  INFO 10942 --- [http-nio-4444-exec-7] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:34:20.515+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:34:20.516+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:34:20.517+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:34:37.791+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:34:37.795+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:34:37.803+03:00  INFO 10942 --- [http-nio-4444-exec-8] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:34:37.803+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:34:37.804+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:34:37.805+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:34:46.916+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:34:46.917+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:34:46.981+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:34:46.981+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:34:46.982+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:34:46.990+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:34:46.991+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:34:46.995+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:34:46.996+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:34:46.996+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:34:50.773+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:34:50.775+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:34:50.784+03:00  INFO 10942 --- [http-nio-4444-exec-1] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:34:50.785+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:34:50.785+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:34:50.787+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:34:50.797+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:34:50.797+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:34:50.806+03:00  INFO 10942 --- [http-nio-4444-exec-2] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:34:50.806+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:34:50.806+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:34:50.807+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:35:06.944+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:35:06.945+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:35:06.950+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:35:06.951+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:35:06.952+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:35:06.957+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:35:06.958+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:35:06.961+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:35:06.961+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:35:06.962+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:35:09.151+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:35:09.151+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:35:09.158+03:00  INFO 10942 --- [http-nio-4444-exec-5] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:35:09.159+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:35:09.159+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:35:09.160+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:35:09.166+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:35:09.166+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:35:09.174+03:00  INFO 10942 --- [http-nio-4444-exec-6] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:35:09.174+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:35:09.174+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:35:09.175+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:35:24.883+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:35:24.886+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:35:24.891+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:35:24.891+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:35:24.892+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:35:24.899+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:35:24.900+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:35:24.904+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:35:24.904+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:35:24.905+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:36:29.474+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:36:29.477+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:36:29.489+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:36:29.489+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:36:29.490+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:36:29.500+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:36:29.501+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:36:29.507+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:36:29.507+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:36:29.508+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:36:43.869+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:36:43.870+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:36:43.874+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:36:43.875+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:36:43.875+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:37:04.599+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/1", parameters={}
+2023-08-31T15:37:04.600+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:37:04.606+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:37:04.606+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false)]
+2023-08-31T15:37:04.607+03:00 DEBUG 10942 --- [http-nio-4444-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:37:15.425+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:37:15.426+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:37:15.431+03:00  INFO 10942 --- [http-nio-4444-exec-3] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:37:15.431+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:37:15.431+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:37:15.432+03:00 DEBUG 10942 --- [http-nio-4444-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:37:15.439+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:37:15.439+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:37:15.444+03:00  INFO 10942 --- [http-nio-4444-exec-4] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:37:15.444+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:37:15.445+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:37:15.445+03:00 DEBUG 10942 --- [http-nio-4444-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:37:18.238+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/2", parameters={}
+2023-08-31T15:37:18.238+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:37:18.242+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:37:18.243+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Kitap oku, content=burasi random icerikler, state=false)]
+2023-08-31T15:37:18.243+03:00 DEBUG 10942 --- [http-nio-4444-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:37:18.249+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/find/2", parameters={}
+2023-08-31T15:37:18.250+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiFindById(Long)
+2023-08-31T15:37:18.254+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:37:18.254+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TaskDto(taskName=Kitap oku, content=burasi random icerikler, state=false)]
+2023-08-31T15:37:18.255+03:00 DEBUG 10942 --- [http-nio-4444-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:37:20.703+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:37:20.703+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:37:20.708+03:00  INFO 10942 --- [http-nio-4444-exec-7] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:37:20.708+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:37:20.708+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:37:20.709+03:00 DEBUG 10942 --- [http-nio-4444-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:37:20.718+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:37:20.718+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:37:20.726+03:00  INFO 10942 --- [http-nio-4444-exec-8] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:37:20.726+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:37:20.726+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:37:20.727+03:00 DEBUG 10942 --- [http-nio-4444-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T15:44:44.351+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T15:44:44.364+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T15:44:44.417+03:00  INFO 10942 --- [http-nio-4444-exec-9] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T15:44:44.423+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T15:44:44.425+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T15:44:44.430+03:00 DEBUG 10942 --- [http-nio-4444-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T16:12:59.044+03:00  WARN 10942 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m55s705ms).
+2023-08-31T16:27:40.788+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T16:27:40.795+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T16:27:40.849+03:00  INFO 10942 --- [http-nio-4444-exec-10] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T16:27:40.855+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T16:27:40.856+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T16:27:40.862+03:00 DEBUG 10942 --- [http-nio-4444-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-31T16:27:40.876+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/task/api/v1/list", parameters={}
+2023-08-31T16:27:40.877+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ybakyurek.controller.api.impl.TaskApiImpl#taskApiList()
+2023-08-31T16:27:40.893+03:00  INFO 10942 --- [http-nio-4444-exec-1] c.y.b.services.impl.TaskServicesImpl     : Liste Sayısı: 5
+2023-08-31T16:27:40.894+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-08-31T16:27:40.894+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[TaskDto(taskName=Market alisverisi, content=burasi random icerikler, state=false), TaskDto(taskName (truncated)...]
+2023-08-31T16:27:40.899+03:00 DEBUG 10942 --- [http-nio-4444-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

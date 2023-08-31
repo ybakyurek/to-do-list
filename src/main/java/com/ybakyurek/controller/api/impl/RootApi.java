@@ -1,4 +1,4 @@
-package com.ybakyurek.controller.api;
+package com.ybakyurek.controller.api.impl;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/root")
-
-
-//root'a yani index'e yonlendirmek icin bunu yazmamiz gerekiyor
 public class RootApi {
-    @GetMapping({"/","/index"})
 
+    // http://localhost:4444/root/index
+    @GetMapping({"/","/index"})
     public ResponseEntity<String> getRoot(){
         return ResponseEntity.ok("index");
     }
+
 }
