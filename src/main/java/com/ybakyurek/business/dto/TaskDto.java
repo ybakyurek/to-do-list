@@ -27,9 +27,7 @@ public class TaskDto extends AuditingAwareBaseDto implements Serializable {
 
     // CATEGORY NAME
     // kendi Anonotation'ı yazdım.
-    @UniqueTaskName
-    @NotEmpty(message = "{task.validation.constraints.NotNull.message}")
-    @Size(min=2,message = "{task.least.validation.constraints.NotNull.message}")
+
     private String taskName;
 
     private String content;

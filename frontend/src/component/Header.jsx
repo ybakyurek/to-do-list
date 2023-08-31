@@ -11,9 +11,6 @@ import { Link } from 'react-router-dom';
 // Language
 import OtherLanguageServices from "../internationalization/OtherLanguageServices";
 
-// Flag (Dil)
-import tr from "../img/flag/tr.png"
-import en from "../img/flag/en.png"
 
 
 // CLASS COMPONENT
@@ -53,7 +50,7 @@ class Header extends Component {
             <React.Fragment>
                 <nav className="navbar navbar-expand-md navbar-light bg-light">
                     <div className="container">
-                        <Link className="navbar-brand" to="task/list"> <i className={this.props.logo}></i></Link>
+                        <Link className="navbar-brand" to="/"> <i className={this.props.logo}></i></Link>
                         <button
                             className="navbar-toggler d-lg-none"
                             type="button"
@@ -68,14 +65,15 @@ class Header extends Component {
                         <div className="collapse navbar-collapse" id="collapsibleNavId">
                             <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link active" href="#" aria-current="page">
+                                    {/* <a className="nav-link active" href="#" aria-current="page">
                                         Home <span className="visually-hidden">(current)</span>
-                                    </a>
+                                    </a> */}
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        Link
+                                    <a className="nav-link" href="/task/list">
+                                        Görev Listesi
                                     </a>
+                                    
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a
@@ -99,7 +97,7 @@ class Header extends Component {
                                 </li>
                             </ul>
 
-                            <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+                            {/* <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
                                 <li className="nav-item">
                                 <a  href="#" onClick={() => this.internationalizationLanguage('tr')}>
                                            <img src={tr} alt="" className="rounded-circle" style={{width:"50px",marginRight:"10px"}}  />
@@ -110,7 +108,7 @@ class Header extends Component {
                                 <img src={en} alt=""  style={{width:"40px",marginRight:"10px"}}  />
                                         </a>
                                 </li>
-                            </ul>
+                            </ul> */}
 
                             <form className="d-flex my-2 my-lg-0">
                                 <input

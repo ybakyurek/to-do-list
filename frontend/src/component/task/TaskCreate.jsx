@@ -18,13 +18,14 @@ function TaskCreate({ t }) {
 
   // STATE
   const [taskName, setTaskName] = useState('');
+  const [content, setContent] = useState(''); // Yeni content state'i
   const [error, setError] = useState();
 
   // Dinleyiciler 
   // taskName her hangi bir değişiklik olduğunda error silinsin
   useEffect(() => {
     setError(undefined)
-  }, [taskName]);
+  }, [taskName,content]);
 
 
   // CREATE
@@ -34,7 +35,8 @@ function TaskCreate({ t }) {
 
     // Task object
     const newTask = {
-      taskName
+      taskName,
+      content
     }
     console.log(newTask);
 
@@ -42,6 +44,7 @@ function TaskCreate({ t }) {
     // API
     try {
       const response = await TaskApi.taskApiCreate(newTask);
+      navigate('/task/list');
     } catch (err) {
 
       setError(err.response.data.validationErrors);
@@ -53,10 +56,12 @@ function TaskCreate({ t }) {
   // CHANGE
   const taskOnChange = (event) => {
     const { name, value } = event.target;
-    //console.log(`${name} => ${value}`);
 
-    // onChange
-    setTaskName(value)
+    if (name === 'taskName') {
+      setTaskName(value);
+    } else if (name === 'content') { // content için değişiklikleri alın
+      setContent(value);
+    }
   }
 
 
@@ -74,19 +79,36 @@ function TaskCreate({ t }) {
             required={true}
             autoFocus={true}
             id="task_data"
-            name="task_data"
+            name="taskName" // name'i taskName olarak değiştirin
             onChange={taskOnChange}
           />
-          {/* state hatayı bootstrap ile alert ekrana basma */}
           {error ? <div className="alert alert-danger" role="alert">
             {error.taskName}
           </div> : ""}
         </div>
+
+        {/* Yeni input alanı */}
+        <div className="form-group">
+          <span>Content</span>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Content"
+            required={true}
+            name="content"
+            onChange={taskOnChange}
+          />
+          {error ? <div className="alert alert-danger" role="alert">
+            {error.content}
+          </div> : ""}
+        </div>
+
         <button
           type='submit'
           className="btn btn-primary mt-3"
-          disabled={!true}
-          onClick={taskCreate}>{t('create')}</button>
+          onClick={taskCreate}>
+          {t('create')}
+        </button>
       </form>
       <br /><br /><br /><br /><br /><br /><br /><br />
     </React.Fragment>

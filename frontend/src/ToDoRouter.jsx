@@ -46,7 +46,8 @@ class BlogRouter extends Component {
         //RETURN
         return (
             <React.Fragment>
-                <Header logo="fa-solid fa-warehouse" />
+                <Header logo="fa-solid fa-house fa-sm" style={{ color: "#66BFBF" }}/>
+
 
                 <div className="container">
                     <Routes>

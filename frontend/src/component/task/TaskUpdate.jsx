@@ -20,6 +20,7 @@ import TaskApi from '../../services/TaskApi';
 
   // STATE
   const [taskName, setTaskName] = useState('');
+  const [content, setContent] = useState(''); 
   const [id, setID] = useState(null);
 
   // PARAMS
@@ -34,6 +35,7 @@ import TaskApi from '../../services/TaskApi';
       .then((response) => {
         console.log(response.data);
         setTaskName(response.data.taskName)
+        setContent(response.data.content)
       })
       .catch((err) => {
         console.error(err);
@@ -45,10 +47,12 @@ import TaskApi from '../../services/TaskApi';
   const taskUpdate= async (event)=>{
     // Browser'ın post için durmasını istiyorum
     event.preventDefault();
+    const updatedTaskName = taskName === '' ? undefined : taskName;
 
     // Task object
     const newTask={
-      taskName
+      taskName,
+      content
     }
     console.log(newTask);
 
@@ -82,6 +86,18 @@ import TaskApi from '../../services/TaskApi';
           value={taskName}
           />
           </div>
+          <div className="form-group">
+          <span>Content</span>
+          <input 
+            type="text" 
+            className="form-control" 
+            placeholder="Content" 
+            required={true}
+            name="content"
+            onChange={(event) => { setContent(event.target.value) }}
+            value={content}
+          />
+        </div>
           <button type='submit' className="btn btn-primary mt-3" onClick={taskUpdate}>{t('update')}</button>
       </form>
       <br /><br /><br /><br /><br /><br /><br /><br />

@@ -12,6 +12,8 @@ function TaskList({ t, i18n,props}) {
 
   // STATE
   const [TaskStateApi, setTaskStateApi] = useState([]);
+  const [taskStates, setTaskStates] = useState([]);
+  
 
   // I18N
 
@@ -21,9 +23,34 @@ function TaskList({ t, i18n,props}) {
       .then((response) => {
         console.log(response.data);
         setTaskStateApi(response.data);
+        setTaskStates(response.data);
+        fetchTaskList();
       })
       .catch((err) => { console.error(err); });
   }, []);
+
+
+
+
+  const fetchTaskList = async () => {
+    try {
+      const response = await TaskApi.taskApiList();
+      setTaskStates(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const toggleTaskState = async (taskId) => {
+    try {
+      await TaskApi.toggleTaskState(taskId);
+      fetchTaskList();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
 
 
   // LIST
@@ -44,6 +71,7 @@ function TaskList({ t, i18n,props}) {
       TaskApi.taskApiDeleteById(id)
         .then(() => {
           getListTask();
+          navigate("/task/list");
         })
     } else {
       alert("Silinmedi.")
@@ -76,7 +104,7 @@ function TaskList({ t, i18n,props}) {
             <th>{t("task_name")}</th>
             <th>{t("content")}</th>
             <th>{t("state")}</th>
-            <th>{t("date")}</th>
+            <th>{t("StateCheck")}</th>
             <th>{t("update")}</th>
             <th>{t("view")}</th>
             <th>{t("delete")}</th>
@@ -89,8 +117,15 @@ function TaskList({ t, i18n,props}) {
                 <td>{data.id}</td>
                 <td>{data.taskName}</td>
                 <td>{data.content}</td>
-                <td>{data.state}</td>
-                <td>{data.systemDate}</td>
+                <td>{data.state ? t("Tamamlandi") : t("Tamamlanmadi")}</td>
+                <td>
+                <input
+                  type="checkbox"
+                  checked={data.state}
+                  onChange={() => toggleTaskState(data.id)}
+                />
+              </td>
+                
 
                 <td>
                   <Link to={`/task/update/${data.id}`}>
