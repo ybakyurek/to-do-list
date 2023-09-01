@@ -69,14 +69,31 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
     ///////////////////////////////////////////////////////
     // ALL DELETE
     @Override
+    @DeleteMapping(value="/delete/all")
     public ResponseEntity<String> taskApiAllDelete() {
-        return null;
+        iTaskServices.taskServiceDeleteAll(); // Tüm verileri silmek için servis metodu çağrılır.
+        return ResponseEntity.ok("Tüm veriler silindi.");
     }
 
-    // SPEED DATA
     @Override
-    public ResponseEntity<List<TaskDto>> taskApiSpeedData(Long key) {
-        return null;
+    @DeleteMapping(value="/delete/by-state/{state}")
+    public ResponseEntity<String> taskApiDeleteByState(@PathVariable(name = "state") boolean state) {
+        iTaskServices.taskServiceDeleteByState(state);
+        return ResponseEntity.ok("Belirtilen state değerine sahip Task'ler silindi.");
     }
+
+    @Override
+    @GetMapping("/search/{keyword}")
+    public ResponseEntity<List<TaskDto>> taskApiSearch(@PathVariable(name = "keyword") String keyword) {
+        List<TaskDto> tasks = iTaskServices.taskServiceFindByKeyword(keyword);
+        return ResponseEntity.status(HttpStatus.OK).body(tasks);
+    }
+
+    @Override
+    @PutMapping(value = "/toggle-state/{id}")
+    public ResponseEntity<?> taskApiToggleState(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok().body(iTaskServices.taskServiceToggleState(id));
+    }
+
 
 } //end class

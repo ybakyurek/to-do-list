@@ -1,6 +1,8 @@
 package com.ybakyurek.controller.api;
 
+import com.ybakyurek.business.dto.TaskDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -26,6 +28,10 @@ public interface ITaskApi<D> {
     // ALL DELETE
     public ResponseEntity<String> taskApiAllDelete();
 
-    // SPEED DATA
-    public ResponseEntity<List<D>> taskApiSpeedData(Long key);
+    public ResponseEntity<String> taskApiDeleteByState(boolean state);
+
+    public ResponseEntity<List<TaskDto>> taskApiSearch( String keyword);
+
+    // STATE TOGGLE
+    public ResponseEntity<?> taskApiToggleState(Long id);
 }

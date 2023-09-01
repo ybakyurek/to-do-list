@@ -113,4 +113,61 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
         return taskFindDto;
     }
 
+    //All Delete
+    @Override
+    @Transactional // create, delete, update
+    public void taskServiceDeleteAll() {
+        iTaskRepository.deleteAll();
+    }
+
+    @Override
+    @Transactional // create, delete, update
+    public void taskServiceDeleteByState(boolean state) {
+        List<TaskEntity> tasksToDelete = iTaskRepository.findByState(state);
+
+        for (TaskEntity taskEntity : tasksToDelete) {
+            iTaskRepository.delete(taskEntity);
+        }
+    }
+
+    public List<TaskDto> taskServiceFindByKeyword(String keyword) {
+        // keyword null veya boş ise tüm taskleri döndür
+        if (keyword == null || keyword.isEmpty()) {
+            return taskServiceList();
+        }
+
+        List<TaskEntity> tasksByKeyword = new ArrayList<>();
+
+        // taskName veya content içinde keyword içeren TaskEntity'leri sorgula
+        List<TaskEntity> tasksWithKeywordInTaskName = iTaskRepository.findByTaskNameContainingIgnoreCase(keyword);
+        List<TaskEntity> tasksWithKeywordInContent = iTaskRepository.findByContentContainingIgnoreCase(keyword);
+
+        // İki listeyi birleştir
+        tasksByKeyword.addAll(tasksWithKeywordInTaskName);
+        tasksByKeyword.addAll(tasksWithKeywordInContent);
+
+        // TaskEntity listesini TaskDto listesine dönüştür
+        List<TaskDto> tasksDto = new ArrayList<>();
+        for (TaskEntity taskEntity : tasksByKeyword) {
+            tasksDto.add(entityToDto(taskEntity));
+        }
+
+        return tasksDto;
+    }
+
+    @Override
+    @Transactional // create, delete, update
+    public TaskDto taskServiceToggleState(Long id) {
+        // Önce Bul
+        TaskDto taskFindDto = taskServiceFindById(id);
+        if (taskFindDto != null) {
+            TaskEntity taskEntity = dtoToEntity(taskFindDto);
+            taskEntity.toggleState(); // State'i tersine çevir
+            iTaskRepository.save(taskEntity);
+            // Dönüşte ID ve Date'i ayarla
+            taskFindDto.setState(taskEntity.getState());
+        }
+        return taskFindDto;
+    }
+
 } //end class

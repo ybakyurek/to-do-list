@@ -47,7 +47,8 @@ public class CommandLineRunnerBean {
         randomData[4] = "kosu";
         // döngüde rastgele bir tane category seçecek
         for (int i = 0; i < 5; i++) {
-            taskEntitySave(randomData[i], "burasi random icerikler",false);
+            if(i%2==0) taskEntitySave(randomData[i], "burasi random icerikler",false);
+            if(i%2!=0) taskEntitySave(randomData[i], "burasi random icerikler market olan",true);
         }
         // döngüde rastgele bir tane category seçecek
         for (int i = 0; i < randomData.length; i++) {

@@ -58,4 +58,8 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
         this.content = content;
         this.state = state;
     }
+
+    public void toggleState() {
+        this.state = !this.state;
+    }
 } //end class
