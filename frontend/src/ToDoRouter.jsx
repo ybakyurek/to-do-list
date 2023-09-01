@@ -15,7 +15,6 @@ import Main from './component/Main';
 
 // TASK
 import TaskList from './component/task/TaskList';
-import TaskCreate from './component/task/TaskCreate';
 import TaskView from './component/task/TaskView';
 import TaskUpdate from './component/task/TaskUpdate';
 
@@ -55,7 +54,6 @@ class BlogRouter extends Component {
 
                         {/* ToDo task */}
                         <Route path='/task/list' element={<TaskList list="task"/>} />
-                        <Route path='/task/create' element={<TaskCreate/>} />
                         <Route path='/task/view/:id' element={<TaskView/>} />
                         <Route path='/task/update/:id' element={<TaskUpdate/>} />
                         {/* bad request */}

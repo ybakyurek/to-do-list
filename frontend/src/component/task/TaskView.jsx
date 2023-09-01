@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
+import { withTranslation } from 'react-i18next'
 import TaskApi from '../../services/TaskApi';
-//import axios from 'axios';
+// REACT
+
 
 
 // FUNCTION
-export default function TaskView() {
+function TaskView({ t }) {
 
   // REDIRECT
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  
 
   // STATE
   const [viewApi, setViewApi] = useState([]);
   const [id, setID] = useState(null);
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    setError();
+  }, );
 
 
 
@@ -61,10 +69,8 @@ export default function TaskView() {
     <React.Fragment>
       <div class="card">
         <div class="card-body text-center">
-          <h5 class="card-title"> {viewApi.id}</h5>
           <p class="card-title"> {viewApi.taskName}</p>
           <p class="card-content"> {viewApi.content}</p>
-          <p class="card-text">  {viewApi.systemDate}</p>
           <Link to={`/task/update/${viewID.id}`} className="btn btn-primary">
             Update
           </Link>
@@ -84,3 +90,5 @@ export default function TaskView() {
 
   )
 }
+
+export default withTranslation()(TaskView); 

@@ -97,19 +97,6 @@ class Header extends Component {
                                 </li>
                             </ul>
 
-                            {/* <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li className="nav-item">
-                                <a  href="#" onClick={() => this.internationalizationLanguage('tr')}>
-                                           <img src={tr} alt="" className="rounded-circle" style={{width:"50px",marginRight:"10px"}}  />
-                                        </a>
-                                </li>
-                                <li className="nav-item">
-                                <a  href="#" onClick={() => this.internationalizationLanguage('en')}>
-                                <img src={en} alt=""  style={{width:"40px",marginRight:"10px"}}  />
-                                        </a>
-                                </li>
-                            </ul> */}
-
                         </div>
                     </div>
                 </nav>

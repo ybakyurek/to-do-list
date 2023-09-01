@@ -12,13 +12,19 @@ i18n.use(initReactI18next).init({
                 'update': 'Update',
                 'delete': 'Delete',
                 'view': 'View',
-                'create': 'Create',
+                'create': 'Add New Task',
                 'task_list':"Task List",
                 'task_create':"Task Create",
                 'task_update':"Task Update",
                 'task_delete':"Task Delete",
                 'content' : "Content",
-                'state' : "State"
+                'state' : "State",
+                'new_task':"New Task",
+                'all' : "All",
+                'done': "Done",
+                'todo':"ToDo",
+                'deleteAll' : "Delete All",
+                'deleteDone' : "Delete Done"
             }
         },
         tr:
@@ -36,7 +42,13 @@ i18n.use(initReactI18next).init({
                 'task_update':"Görev Güncelle",
                 'task_delete':"Görev Sil",
                 'content' : "İçerik",
-                'state' : "Durum"
+                'state' : "Durum",
+                'new_task':"Yeni Görev",
+                'all' : "Hepsi",
+                'done': "Bitenler",
+                'todo':"Yapılacaklar",
+                'deleteAll' : "Hepsini Sil",
+                'deleteDone' : "Bitenleri Sil"
             }
         }
     },
