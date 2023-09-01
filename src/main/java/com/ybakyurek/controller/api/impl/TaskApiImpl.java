@@ -1,7 +1,6 @@
 package com.ybakyurek.controller.api.impl;
 
-
-import com.ybakyurek.assist.FrontendURL;
+import com.ybakyurek.assist.FrontendUrl;
 import com.ybakyurek.business.dto.TaskDto;
 import com.ybakyurek.business.services.ITaskServices;
 import com.ybakyurek.controller.api.ITaskApi;
@@ -20,7 +19,7 @@ import java.util.List;
 
 // API
 @RestController
-@CrossOrigin(origins = FrontendURL.REACT_URL) // http://localhost:3000
+@CrossOrigin(origins = FrontendUrl.REACT_URL) // http://localhost:3000
 @RequestMapping("/task/api/v1")
 public class TaskApiImpl implements ITaskApi<TaskDto> {
 
@@ -55,8 +54,8 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
     // http://localhost:4444/task/api/v1/update/1
     @Override
     @PutMapping(value="/update/{id}")
-    public ResponseEntity<?> taskApiUpdate(@PathVariable(name = "id") Long id,TaskDto taskDto) {
-        return ResponseEntity.ok().body(iTaskServices.taskServiceUpdate(id,taskDto));
+    public ResponseEntity<?> taskApiUpdate(@PathVariable(name = "id") Long id, @Valid @RequestBody TaskDto taskDto) {
+        return ResponseEntity.ok().body(iTaskServices.taskServiceUpdate(id, taskDto));
     }
 
     // DELETE BY ID
@@ -70,42 +69,31 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
     ///////////////////////////////////////////////////////
     // ALL DELETE
     @Override
+    @DeleteMapping(value="/delete/all")
     public ResponseEntity<String> taskApiAllDelete() {
-        return null;
+        iTaskServices.taskServiceDeleteAll(); // Tüm verileri silmek için servis metodu çağrılır.
+        return ResponseEntity.ok("Tüm veriler silindi.");
     }
 
-    // SPEED DATA
     @Override
-    public ResponseEntity<List<TaskDto>> taskApiSpeedData(Long key) {
-        return null;
+    @DeleteMapping(value="/delete/by-state/{state}")
+    public ResponseEntity<String> taskApiDeleteByState(@PathVariable(name = "state") boolean state) {
+        iTaskServices.taskServiceDeleteByState(state);
+        return ResponseEntity.ok("Belirtilen state değerine sahip Task'ler silindi.");
     }
 
+    @Override
+    @GetMapping("/search/{keyword}")
+    public ResponseEntity<List<TaskDto>> taskApiSearch(@PathVariable(name = "keyword") String keyword) {
+        List<TaskDto> tasks = iTaskServices.taskServiceFindByKeyword(keyword);
+        return ResponseEntity.status(HttpStatus.OK).body(tasks);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    @PutMapping(value = "/toggle-state/{id}")
+    public ResponseEntity<?> taskApiToggleState(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok().body(iTaskServices.taskServiceToggleState(id));
+    }
 
 
 } //end class

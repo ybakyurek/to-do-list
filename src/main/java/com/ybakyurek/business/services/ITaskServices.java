@@ -1,5 +1,6 @@
 package com.ybakyurek.business.services;
 
+import com.ybakyurek.business.dto.TaskDto;
 
 import java.util.List;
 
@@ -12,7 +13,6 @@ public interface ITaskServices<D, E> {
 
     public E dtoToEntity(D d);
 
-
     // C R U D
     // CREATE
     public D taskServiceCreate(D d);
@@ -24,10 +24,18 @@ public interface ITaskServices<D, E> {
     public D taskServiceFindById(Long id);
 
     // UPDATE
-    public D taskServiceUpdate(Long id,D d);
+    public D taskServiceUpdate(Long id, D d);
 
     // DELETE
     public D taskServiceDeleteById(Long id);
+
+    // DELETE All
+    public void taskServiceDeleteAll();
+
+    // DELETE BY STATE
+    public void taskServiceDeleteByState(boolean state);
+
+    List<TaskDto> taskServiceFindByKeyword(String keyword);
+
+    public TaskDto taskServiceToggleState(Long id);
 }
-
-
