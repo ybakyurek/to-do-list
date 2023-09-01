@@ -4,19 +4,6 @@
 
 Bu proje, Java Spring backend, React frontend ve MySQL veritabanını kullanarak geliştirilen bir Todo uygulamasını içerir. Bu uygulama, kullanıcıların görevleri yönetmelerine olanak tanır ve temel işlevler sunar: görev oluşturma, güncelleme, silme ve durum değiştirme.
 
-## Başlangıç
-
-Projeyi yerel bir geliştirme ortamında çalıştırmak için aşağıdaki adımları izleyin.
-
-### Gereksinimler
-
-Projeyi çalıştırmak için aşağıdaki gereksinimlere ihtiyacınız vardır:
-
-- Java JDK 17 veya daha yeni bir sürüm
-- Node.js ve npm (Node Paket Yöneticisi)
-- MySQL veritabanı
-- Ayrıca proje bağımlılıkları için [pom.xml](https://github.com/ybakyurek/to-do-list/blob/main/pom.xml) ve [application.properties](https://github.com/ybakyurek/to-do-list/blob/main/src/main/resources/application.properties) dosyalarına bakabilir.
-
 ### Proje Demosu
 
 ##### ANA SAYFA</u>
@@ -39,7 +26,23 @@ Projeyi çalıştırmak için aşağıdaki gereksinimlere ihtiyacınız vardır:
 
 <img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/Update.png?raw=true" alt="Resim Açıklaması" width="500">
 
+## Başlangıç
 
+Projeyi yerel bir geliştirme ortamında çalıştırmak için aşağıdaki adımları izleyin.
+
+### Gereksinimler
+
+Projeyi çalıştırmak için aşağıdaki gereksinimlere ihtiyacınız vardır:
+
+- Java JDK 17 veya daha yeni bir sürüm
+
+- Node.js ve npm (Node Paket Yöneticisi)
+
+- MySQL veritabanı
+
+- Ayrıca proje bağımlılıkları için [pom.xml](https://github.com/ybakyurek/to-do-list/blob/main/pom.xml) ve [application.properties](https://github.com/ybakyurek/to-do-list/blob/main/src/main/resources/application.properties) dosyalarına bakabilir.
+
+  
 
 ### Kurulum
 
@@ -117,7 +120,7 @@ Bu uygulama ayrıca aşağıdaki API endpointlerini sunar:
 
 API endpointlerini kullanarak bu işlevleri programatik olarak da gerçekleştirebilirsiniz.
 
-## Katkıda Bulunma
+## Katkıda Bulunanlar
 
 Bu proje techcareer.net tarafından düzenlenen eğitmenliğini Sayın Hamit Mızrak'ın yaptığı **Full-Stack Bootcamp** kapsamında hazırlanmıştır.
 
