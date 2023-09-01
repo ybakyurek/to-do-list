@@ -19,6 +19,28 @@ Projeyi çalıştırmak için aşağıdaki gereksinimlere ihtiyacınız vardır:
 
 ### Proje Demosu
 
+##### ANA SAYFA</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/Main.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+##### <u>GÖREV LİSTESİ</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/Task.png?raw=true" width="500">
+
+##### <u>GÖREV</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/View.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+##### <u>GÜNCELLE</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/Update.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
 ### Kurulum
 
 1. Bu depoyu yerel makinenize klonlayın:
