@@ -75,6 +75,7 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
         return ResponseEntity.ok("Tüm veriler silindi.");
     }
 
+    // DELETE BY STATE
     @Override
     @DeleteMapping(value="/delete/by-state/{state}")
     public ResponseEntity<String> taskApiDeleteByState(@PathVariable(name = "state") boolean state) {
@@ -82,6 +83,7 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
         return ResponseEntity.ok("Belirtilen state değerine sahip Task'ler silindi.");
     }
 
+    //FIND BY KEYWORD
     @Override
     @GetMapping("/search/{keyword}")
     public ResponseEntity<List<TaskDto>> taskApiSearch(@PathVariable(name = "keyword") String keyword) {
@@ -89,12 +91,14 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
         return ResponseEntity.status(HttpStatus.OK).body(tasks);
     }
 
+    //SWITCH STATE
     @Override
     @PutMapping(value = "/toggle-state/{id}")
     public ResponseEntity<?> taskApiToggleState(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok().body(iTaskServices.taskServiceToggleState(id));
     }
 
+    //LIST BY STATE
     @Override
     @GetMapping("/list/by-state/{state}")
     public ResponseEntity<List<TaskDto>> taskApiListByState(@PathVariable(name = "state") boolean state) {

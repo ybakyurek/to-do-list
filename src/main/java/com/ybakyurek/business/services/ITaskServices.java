@@ -35,9 +35,12 @@ public interface ITaskServices<D, E> {
     // DELETE BY STATE
     public void taskServiceDeleteByState(boolean state);
 
-    List<TaskDto> taskServiceFindByKeyword(String keyword);
+    //LIST BY KEYWORD
+    public List<TaskDto> taskServiceFindByKeyword(String keyword);
 
+    //LIST BY STATE
     public List<TaskDto> taskServiceFindByState(boolean state);
 
+    //SWITCH STATE
     public TaskDto taskServiceToggleState(Long id);
 }

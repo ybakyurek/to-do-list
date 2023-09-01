@@ -30,6 +30,7 @@ public class TaskDto extends AuditingAwareBaseDto implements Serializable {
     // kendi Anonotation'ı yazdım.
 
     private String taskName;
+    
     @Lob
     private String content;
 

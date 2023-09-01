@@ -120,6 +120,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
         iTaskRepository.deleteAll();
     }
 
+    //Delete By State
     @Override
     @Transactional // create, delete, update
     public void taskServiceDeleteByState(boolean state) {
@@ -130,6 +131,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
         }
     }
 
+    //Find By Keyword
     public List<TaskDto> taskServiceFindByKeyword(String keyword) {
         // keyword null veya boş ise tüm taskleri döndür
         if (keyword == null || keyword.isEmpty()) {
@@ -155,6 +157,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
         return tasksDto;
     }
 
+    //Switch State(done or undone)
     @Override
     @Transactional // create, delete, update
     public TaskDto taskServiceToggleState(Long id) {
@@ -170,6 +173,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
         return taskFindDto;
     }
 
+    //FIND BY STATE
     @Override
     public List<TaskDto> taskServiceFindByState(boolean state) {
         List<TaskEntity> tasksByState = iTaskRepository.findByState(state);

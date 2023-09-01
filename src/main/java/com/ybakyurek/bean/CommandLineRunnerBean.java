@@ -20,12 +20,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class CommandLineRunnerBean {
 
-
     // Injection
     private final ITaskServices iTaskServices;
     private final ITaskRepository iTaskRepository;
-
-
 
     // CategoryName (Save)
     public TaskEntity taskEntitySave(String categoryName,String content, Boolean state) {
@@ -37,15 +34,15 @@ public class CommandLineRunnerBean {
         return taskEntity;
     }
 
-    // Random Category
-    public String[] randomCategory() {
+    // Task
+    public String[] createTask() {
         String[] randomData = new String[5];
         randomData[0] = "Marketten Alınacaklar";
         randomData[1] = "Kitap Oku";
         randomData[2] = "Kodlama Egzersizi Yap";
         randomData[3] = "Koşuya Çık";
         randomData[4] = "Su İç";
-        // döngüde rastgele bir tane category seçecek
+        // Content
         taskEntitySave(randomData[0], "Su, muz, mısır",false);
         taskEntitySave(randomData[1], "Yüzüklerin Efendisi",true);
         taskEntitySave(randomData[2], "Java Spring",false);
@@ -59,15 +56,12 @@ public class CommandLineRunnerBean {
         return randomData;
     }
 
-
-
     @Bean
     public CommandLineRunner taskCommandLineRunnerMethod() {
         return args -> {
             System.out.println("CommandLineRunner Çalıştı");
             log.info("CommandLineRunner Çalıştı");
-
-            randomCategory();
+            createTask();
         };
     }
 }
