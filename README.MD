@@ -55,7 +55,6 @@ git clone https://github.com/ybakyurek/to-do-list.git
 2. Backend'i başlatın: Intellij Idea Ultimate Edition kullanmanızı tavsite ederim
 
 ```bash
-cd backend
 ./mvnw spring-boot:run
 ```
 
@@ -126,4 +125,4 @@ Bu proje techcareer.net tarafından düzenlenen eğitmenliğini Sayın Hamit Mı
 
 ## Lisans
 
-Bu proje [MIT lisansı](LICENSE) altında lisanslanmıştır. Daha fazla bilgi için lisans dosyasını kontrol edin.
+Bu proje [MIT lisansı](LICENSE) altında lisanslanmıştır. 
