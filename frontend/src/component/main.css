@@ -68,11 +68,11 @@ h1{
     font-family: Arial;
     color: #ffffff;
     font-size: 20px;
-    /* margin: 100px 100px 100px 100px;
-    padding: 10px 20px 10px 20px;
+    margin: 0% 2% 3% 2%;
+    /* padding: 110% 10% 10% 10%; */
     text-decoration: none;
-    position: relative; */
-    /* top: 50px; */
+    position: relative; 
+    top: 15px;
   }
   
   .btn:hover {

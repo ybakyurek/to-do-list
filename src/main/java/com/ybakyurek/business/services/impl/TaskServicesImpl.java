@@ -170,4 +170,17 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
         return taskFindDto;
     }
 
+    @Override
+    public List<TaskDto> taskServiceFindByState(boolean state) {
+        List<TaskEntity> tasksByState = iTaskRepository.findByState(state);
+
+        // TaskEntity listesini TaskDto listesine dönüştür
+        List<TaskDto> tasksDto = new ArrayList<>();
+        for (TaskEntity taskEntity : tasksByState) {
+            tasksDto.add(entityToDto(taskEntity));
+        }
+
+        return tasksDto;
+    }
+
 } //end class

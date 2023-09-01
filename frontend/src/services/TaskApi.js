@@ -30,6 +30,18 @@ class TaskApi {
         return axios.delete(`${TASK_URL}/delete/${id}`)
     }
 
+    taskApiDeleteAll() {
+        return axios.delete(`${TASK_URL}/delete/all`)
+    }
+
+    taskApiDeleteByState(state) {
+        return axios.delete(`${TASK_URL}/delete/by-state/${state}`);
+      }
+    taskApiSwitchToggle(id) {
+        return axios.put(`${TASK_URL}/toggle-state/${id}`)
+    }
+
+
 } //end class
 
 export default new TaskApi();

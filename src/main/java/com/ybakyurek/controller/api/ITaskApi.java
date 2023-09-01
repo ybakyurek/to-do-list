@@ -34,4 +34,8 @@ public interface ITaskApi<D> {
 
     // STATE TOGGLE
     public ResponseEntity<?> taskApiToggleState(Long id);
+
+    // LIST BY STATE
+    public ResponseEntity<List<D>> taskApiListByState(boolean state);
+
 }

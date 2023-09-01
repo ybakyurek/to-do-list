@@ -16,5 +16,6 @@ public interface ITaskRepository extends CrudRepository<TaskEntity,Long> {
 
     List<TaskEntity> findByTaskNameContainingIgnoreCase(String keyword);
     List<TaskEntity> findByContentContainingIgnoreCase(String keyword);
+
 }
 

@@ -1,6 +1,6 @@
 package com.ybakyurek.controller.api.impl;
 
-import com.ybakyurek.assist.FrontendUrl;
+import com.ybakyurek.assist.FrontendURL;
 import com.ybakyurek.business.dto.TaskDto;
 import com.ybakyurek.business.services.ITaskServices;
 import com.ybakyurek.controller.api.ITaskApi;
@@ -19,7 +19,7 @@ import java.util.List;
 
 // API
 @RestController
-@CrossOrigin(origins = FrontendUrl.REACT_URL) // http://localhost:3000
+@CrossOrigin(origins = FrontendURL.REACT_URL) // http://localhost:3000
 @RequestMapping("/task/api/v1")
 public class TaskApiImpl implements ITaskApi<TaskDto> {
 
@@ -93,6 +93,13 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
     @PutMapping(value = "/toggle-state/{id}")
     public ResponseEntity<?> taskApiToggleState(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok().body(iTaskServices.taskServiceToggleState(id));
+    }
+
+    @Override
+    @GetMapping("/list/by-state/{state}")
+    public ResponseEntity<List<TaskDto>> taskApiListByState(@PathVariable(name = "state") boolean state) {
+        List<TaskDto> tasks = iTaskServices.taskServiceFindByState(state);
+        return ResponseEntity.status(HttpStatus.OK).body(tasks);
     }
 
 

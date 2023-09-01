@@ -37,5 +37,7 @@ public interface ITaskServices<D, E> {
 
     List<TaskDto> taskServiceFindByKeyword(String keyword);
 
+    public List<TaskDto> taskServiceFindByState(boolean state);
+
     public TaskDto taskServiceToggleState(Long id);
 }
