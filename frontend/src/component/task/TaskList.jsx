@@ -16,11 +16,8 @@ function TaskList({ t, i18n, props }) {
   const [taskStates, setTaskStates] = useState([]);
   const [taskName, setTaskName] = useState('');
   const [state, setState] = useState('');
-  const [content, setContent] = useState(''); // Yeni content state'i
+  const [content, setContent] = useState('');
   const [error, setError] = useState();
-
-
-  // I18N
 
   // USEEFFECT
   useEffect(() => {
@@ -34,9 +31,6 @@ function TaskList({ t, i18n, props }) {
       .catch((err) => { console.error(err); });
   }, []);
 
-
-
-
   const fetchTaskList = async () => {
     try {
       const response = await TaskApi.taskApiList();
@@ -46,20 +40,8 @@ function TaskList({ t, i18n, props }) {
     }
   };
 
-  const toggleTaskState = async (taskId) => {
-    try {
-      await TaskApi.toggleTaskState(taskId);
-      fetchTaskList();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-
   // CREATE
   const taskCreate = async (event) => {
-    // Browser'ın post için durmasını istiyorum
-    // event.preventDefault();
 
     // Task object
     const newTask = {
@@ -93,8 +75,6 @@ function TaskList({ t, i18n, props }) {
 
     }
   }
-
-
 
   // LIST
   const getListTask = (() => {
@@ -136,7 +116,7 @@ function TaskList({ t, i18n, props }) {
     navigate("/task/list");
   });
 
-  // DELETE state
+  // DELETE BY STATE
   const setDeleteTaskbyState = (() => {
     if (window.confirm("Yapılan İşleri Silmek İstediğinize Emin Misiniz ?")) {
       TaskApi.taskApiDeleteByState(1)
@@ -151,8 +131,6 @@ function TaskList({ t, i18n, props }) {
   });
 
 
-
-
   //UPDATE
   const setUpdateTask = (data) => {
     let { id, taskName, systemDate } = data;
@@ -160,7 +138,6 @@ function TaskList({ t, i18n, props }) {
     localStorage.setItem("task_update_task_name", taskName);
     localStorage.setItem("task_update_task_date", systemDate);
   }
-
 
   // Update Toggle
   const setStatus = ((id) => {
@@ -177,12 +154,31 @@ function TaskList({ t, i18n, props }) {
     localStorage.setItem("task_view_id", id);
   }
 
-
-  const maxLength = 50; // Gösterilecek maksimum karakter sayısı
+  const maxLength = 25; // Gösterilecek maksimum karakter sayısı
   const [isTruncated, setIsTruncated] = useState(true);
 
   const toggleTruncate = () => {
     setIsTruncated(!isTruncated);
+  };
+
+  // Tüm görevleri gösterme işlevi
+  const resetTaskList = () => {
+    setTaskStateApi(taskStates);
+  };
+
+  // Filtreleme işlevi
+  const filterDoneTasks = () => {
+    setTaskStateApi(taskStates);
+    const filteredTasks = TaskStateApi.filter((data) => data.state === true);
+    setTaskStateApi(filteredTasks);
+  };
+
+  // Filtreleme işlevi
+  const filterUnDoneTasks = () => {
+    setTaskStateApi(taskStates);
+    const filteredTasks = TaskStateApi.filter((data) => data.state === false);
+    setTaskStateApi(filteredTasks);
+
   };
 
 
@@ -190,8 +186,9 @@ function TaskList({ t, i18n, props }) {
   return (
     <React.Fragment>
 
-      <form className="mt-5">
 
+      <form className="mt-5">
+        <h3>{t("new_task")}</h3>
         <div className="form-group">
           <span>{t('task_name')}</span>
           <input
@@ -201,21 +198,20 @@ function TaskList({ t, i18n, props }) {
             required={true}
             autoFocus={true}
             id="task_data"
-            name="taskName" // name'i taskName olarak değiştirin
+            name="taskName"
             onChange={taskOnChange}
           />
           {error ? <div className="alert alert-danger" role="alert">
             {error.taskName}
           </div> : ""}
         </div>
-
-        {/* Yeni input alanı */}
+        {/* content*/}
         <div className="form-group">
-          <span>Content</span>
+          <span>{t("content")}</span>
           <input
             type="text"
             className="form-control"
-            placeholder="Content"
+            placeholder={t("content")}
             required={true}
             name="content"
             onChange={taskOnChange}
@@ -235,14 +231,49 @@ function TaskList({ t, i18n, props }) {
 
       </form>
 
+
+{/**************  ALL, DONE, UNDONE **************************/}
       <h1 className="text-center display-3">{t("task_list")} </h1>
+      <span>
+        <button
+          className="btn btn-primary"
+          onClick={() =>
+            resetTaskList()
+          }
+        >
+          {t("all")}
+        </button>
+
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            resetTaskList();
+            filterDoneTasks();
+          }}
+        >
+          {t("done")}
+        </button>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            resetTaskList();
+            filterUnDoneTasks();
+          }}
+
+        >
+          {t("todo")}
+        </button>
+
+      </span>
+
+{/**************  TABLE **************************/}
 
       <table>
         <thead>
           <tr>
             <th>{t("task_name")}</th>
             <th>{t("content")}</th>
-            <th>{t("StateCheck")}</th>
+            <th>{t("state")}</th>
             <th>{t("update")}</th>
             <th>{t("view")}</th>
             <th>{t("delete")}</th>
@@ -258,25 +289,17 @@ function TaskList({ t, i18n, props }) {
                     {data.taskName}
                   </span>
                 </td>
-                {/* {isTruncated ? content.slice(0, maxLength) + '...' : content}
-        <button onClick={toggleTruncate}>
-          {isTruncated ? 'Daha fazla göster' : 'Daha az göster'}
-        </button> */}
                 <td>
-                {isTruncated ? data.content.slice(0, maxLength) + '' : data.content}
-        {data.content.length > maxLength && (
-          <btx onClick={toggleTruncate} style={{color:'blue'}}>
-            {isTruncated ? '...(+)' : '(-)' }
-          </btx>
-        )}
+                  <span style={{ textDecoration: data.state ? 'line-through' : 'none', color: data.state ? 'red' : 'black' }}>
+                    {isTruncated ? data.content.slice(0, maxLength) + '' : data.content}
+                    {data.content.length > maxLength && (
+                      <btx onClick={toggleTruncate} style={{ color: 'blue' }}>
+                        {isTruncated ? '...(+)' : '(-)'}
+                      </btx>
+                    )}
+                  </span>
                 </td>
 
-
-                {/* <td>
-                  <span style={{ textDecoration: data.state ? 'line-through' : 'none', color: data.state ? 'red' : 'black' }}>
-                    {data.content}
-                  </span>
-                </td> */}
                 <td>
                   <input
                     type="checkbox"
@@ -284,8 +307,6 @@ function TaskList({ t, i18n, props }) {
                     onChange={() => setStatus(data.id)}
                   />
                 </td>
-
-
                 <td>
                   <Link to={`/task/update/${data.id}`}>
                     <i onClick={() => setUpdateTask(data)} className="fa-regular fa-pen-to-square" style={{ color: "#000000", }}></i>
@@ -298,11 +319,9 @@ function TaskList({ t, i18n, props }) {
                   </Link>
                 </td>
 
-
                 <td>
                   <Link to={`/task/delete}`}>
                     <i onClick={() => setDeleteTask(data.id)} className="fa-regular fa-trash-can" style={{ color: "#b51a00" }} ></i>
-                    {/* <i class="fa-regular fa-trash-can" style="color: #b51a00;"></i> */}
                   </Link>
                 </td>
               </tr>
@@ -311,12 +330,13 @@ function TaskList({ t, i18n, props }) {
         </tbody>
       </table>
 
-      <Link to="/task/create" className="btn btn-primary">{t("create")}</Link>
       <Link to={`/task/delete/all`}>
-        <i onClick={() => setDeleteAllTask()} className="btn btn-primary">Delete All</i>
+        <i onClick={() => setDeleteAllTask()} className="btn btn-primary" style={{ background: "red", borderColor: 'red' }} >{t('deleteAll')}
+        </i>
       </Link>
       <Link to={`/task/delete/true`}>
-        <i onClick={() => setDeleteTaskbyState()} className="btn btn-primary">Delete Done</i>
+        <i onClick={() => setDeleteTaskbyState()} className="btn btn-primary" style={{ background: "red", borderColor: 'red' }}>{t('deleteDone')}
+        </i>
       </Link>
 
     </React.Fragment>

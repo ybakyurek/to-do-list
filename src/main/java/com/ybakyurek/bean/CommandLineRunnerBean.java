@@ -40,16 +40,18 @@ public class CommandLineRunnerBean {
     // Random Category
     public String[] randomCategory() {
         String[] randomData = new String[5];
-        randomData[0] = "Market alisverisi";
-        randomData[1] = "Kitap oku";
-        randomData[2] = "kodlama egzersizi";
-        randomData[3] = "spor";
-        randomData[4] = "kosu";
+        randomData[0] = "Marketten Alınacaklar";
+        randomData[1] = "Kitap Oku";
+        randomData[2] = "Kodlama Egzersizi Yap";
+        randomData[3] = "Koşuya Çık";
+        randomData[4] = "Su İç";
         // döngüde rastgele bir tane category seçecek
-        for (int i = 0; i < 5; i++) {
-            if(i%2==0) taskEntitySave(randomData[i], "burasi random icerikler",false);
-            if(i%2!=0) taskEntitySave(randomData[i], "burasi random icerikler market olan",true);
-        }
+        taskEntitySave(randomData[0], "Su, muz, mısır",false);
+        taskEntitySave(randomData[1], "Yüzüklerin Efendisi",true);
+        taskEntitySave(randomData[2], "Java Spring",false);
+        taskEntitySave(randomData[3], "Hergün akşam 8'de",true);
+        taskEntitySave(randomData[4], "En az iki litre",true);
+
         // döngüde rastgele bir tane category seçecek
         for (int i = 0; i < randomData.length; i++) {
             System.out.println(randomData[i]);

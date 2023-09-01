@@ -106,7 +106,13 @@ table {
 td:first-child {
   width: 20%; /* İlk sütunun genişliği (örneğin 100 piksel) */
   text-transform: capitalize;
+  text-align: left;
 }
+tr td:nth-child(2) {
+  text-transform: capitalize;
+  text-align: left;
+}
+
 /* Tablo başlığı */
 th {
 
@@ -122,6 +128,7 @@ td {
   border: 1px solid #ccc;
   padding: 10px;
   border-style:none;
+  
 }
 
 /* İşaretli (true) görevlerin arka plan rengi */

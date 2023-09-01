@@ -20,6 +20,7 @@ import TaskApi from '../../services/TaskApi';
 
   // STATE
   const [taskName, setTaskName] = useState('');
+  const [state, setState] = useState('');
   const [content, setContent] = useState(''); 
   const [id, setID] = useState(null);
 
@@ -36,6 +37,7 @@ import TaskApi from '../../services/TaskApi';
         console.log(response.data);
         setTaskName(response.data.taskName)
         setContent(response.data.content)
+        setState(response.data.state)
       })
       .catch((err) => {
         console.error(err);
@@ -52,7 +54,8 @@ import TaskApi from '../../services/TaskApi';
     // Task object
     const newTask={
       taskName,
-      content
+      content,
+      state
     }
     console.log(newTask);
 
@@ -87,7 +90,7 @@ import TaskApi from '../../services/TaskApi';
           />
           </div>
           <div className="form-group">
-          <span>Content</span>
+          <span>{t('content')}</span>
           <input 
             type="text" 
             className="form-control" 

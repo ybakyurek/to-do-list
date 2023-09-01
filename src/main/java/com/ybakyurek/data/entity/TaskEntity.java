@@ -52,8 +52,6 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
     }
 
     // Constructor (parametreli)
-
-
     public TaskEntity(String taskName, String content, Boolean state) {
         this.taskName = taskName;
         this.content = content;
