@@ -64,6 +64,13 @@ function TaskCreate({ t }) {
     }
   }
 
+  const maxLength = 50; // Gösterilecek maksimum karakter sayısı
+  const [isTruncated, setIsTruncated] = useState(true);
+
+  const toggleTruncate = () => {
+    setIsTruncated(!isTruncated);
+  };
+
 
   // RETURN
   return (

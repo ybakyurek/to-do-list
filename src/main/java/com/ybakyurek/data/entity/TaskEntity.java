@@ -33,7 +33,8 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
     private String taskName;
 
     // TASK CONTENT
-    @Column(name = "task_content")
+    @Lob
+    @Column(name = "task_content", length = 2000)
     private String content;
 
     // TASK CONTENT

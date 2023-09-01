@@ -2,6 +2,7 @@ package com.ybakyurek.business.dto;
 
 import com.ybakyurek.annotation.UniqueTaskName;
 import com.ybakyurek.auditing.AuditingAwareBaseDto;
+import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -29,7 +30,7 @@ public class TaskDto extends AuditingAwareBaseDto implements Serializable {
     // kendi Anonotation'ı yazdım.
 
     private String taskName;
-
+    @Lob
     private String content;
 
     private Boolean state;
