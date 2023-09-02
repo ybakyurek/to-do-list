@@ -119,6 +119,48 @@ Bu uygulama ayrıca aşağıdaki API endpointlerini sunar:
 
 API endpointlerini kullanarak bu işlevleri programatik olarak da gerçekleştirebilirsiniz.
 
+## UML
+
+##### <u>ALL</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/all.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+##### <u>ENTITY</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/Entity.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+##### <u>ITaskRepo</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/ITaskRepo.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+##### <u>ITaskAPI</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/TasAPI.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+##### <u>Services</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/taskServices.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+##### <u>DTO</u>
+
+<img src="https://github.com/ybakyurek/techCareerAssignments/blob/main/img/DTO.png?raw=true" alt="Resim Açıklaması" width="500">
+
+
+
+
+
+##### 
+
 ## Katkıda Bulunanlar
 
 Bu proje techcareer.net tarafından düzenlenen eğitmenliğini Sayın Hamit Mızrak'ın yaptığı **Full-Stack Bootcamp** kapsamında hazırlanmıştır.
